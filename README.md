@@ -175,7 +175,7 @@ imen@aurora:~$ echo "let's build something unforgettable ✨"
 <h3 align="center">◈ &nbsp; signal from the grid &nbsp; ◈</h3>
 
 <p align="center">
-  <img height="175" src="https://github-readme-stats.vercel.app/api?username=imenbouchriha12&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=FF6EC7&icon_color=9D7BFF&text_color=C9D1D9&rank_icon=github" alt="GitHub stats" />
+  <img height="175" src="https://github-readme-stats.vercel.app/api?username=imenbouchriha12&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF6EC7&icon_color=9D7BFF&text_color=C9D1D9&rank_icon=github" alt="GitHub stats" />
   <img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=imenbouchriha12&layout=compact&langs_count=8&hide_border=true&bg_color=0D1117&title_color=FF6EC7&text_color=C9D1D9" alt="Top languages" />
 </p>
 
