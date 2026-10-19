@@ -160,8 +160,8 @@ imen@aurora:~$ echo "let's build something unforgettable ✨"
 </td>
 <td width="50%" valign="top">
 
-**✨ [Lumina](https://github.com/imenbouchriha12/Imen-s_Portfolio)**<br/>
-<sub>A design-forward portfolio and playground for motion, typography and dark-mode aesthetics.</sub><br/><br/>
+**✨ [Lumina](https://imen-bouchriha.netlify.app/)** &nbsp;·&nbsp; [source](https://github.com/imenbouchriha12/Imen-s_Portfolio)<br/>
+<sub>A design-forward portfolio and playground for motion, typography and dark-mode aesthetics — live on the web.</sub><br/><br/>
 <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
 <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
 <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
@@ -220,7 +220,7 @@ imen@aurora:~$ echo "let's build something unforgettable ✨"
   <a href="mailto:imenbouchriha5@gmail.com"><img src="https://img.shields.io/badge/Email-FF6EC7?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0D1117" alt="Email" /></a>
   <a href="https://www.linkedin.com/in/bouchriha-imen-99077823b"><img src="https://img.shields.io/badge/LinkedIn-9D7BFF?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0D1117" alt="LinkedIn" /></a>
   <a href="https://github.com/imenbouchriha12"><img src="https://img.shields.io/badge/GitHub-22D3EE?style=for-the-badge&logo=github&logoColor=0D1117&labelColor=0D1117" alt="GitHub" /></a>
-  <a href="https://github.com/imenbouchriha12/Imen-s_Portfolio"><img src="https://img.shields.io/badge/Portfolio-FF6EC7?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0D1117" alt="Portfolio" /></a>
+  <a href="https://imen-bouchriha.netlify.app/"><img src="https://img.shields.io/badge/Portfolio-FF6EC7?style=for-the-badge&logo=netlify&logoColor=white&labelColor=0D1117" alt="Portfolio" /></a>
 </p>
 
 <div align="center">
