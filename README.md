@@ -23,7 +23,7 @@
 <tr>
 <td width="61%" valign="top">
 
-### <code>&gt; whoami</code>
+### <code>&gt; Who Am I</code>
 
 I'm **Imen** — a software engineer who believes code should be as thoughtful as it is functional.
 
