@@ -45,22 +45,10 @@ I build full-stack products where clean architecture meets interfaces that make 
 
 <br/>
 
-```console
-imen@aurora:~$ whoami
-> software engineer · full-stack developer · interface daydreamer
-
-imen@aurora:~$ cat current_focus.txt
-> architecture that scales
-> interfaces that feel alive
-> AI that actually helps people
-
-imen@aurora:~$ echo "let's build something unforgettable ✨"
-> let's build something unforgettable ✨
-```
-
 <div align="center">
   <br/>
-  <i>"I don't just ship code. I ship the feeling of things working beautifully."</i>
+  <i>"I don't just ship code — I ship the feeling of things working beautifully."</i><br/>
+  <sub>systems thinker &nbsp;·&nbsp; detail maximalist &nbsp;·&nbsp; midnight builder</sub>
 </div>
 
 <br/>
