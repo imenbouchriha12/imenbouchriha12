@@ -171,13 +171,6 @@ I build full-stack products where clean architecture meets interfaces that make 
   <img width="72%" src="https://streak-stats.demolab.com?user=imenbouchriha12&hide_border=true&background=0D1117&stroke=30363D&ring=FF6EC7&fire=9D7BFF&currStreakNum=FFFFFF&currStreakLabel=FF6EC7&sideNums=C9D1D9&sideLabels=94A3B8&dates=64748B" alt="GitHub streak" />
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-light.svg" />
-    <img width="95%" alt="Imen's contribution graph in pink and mauve" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-light.svg" />
-  </picture>
-</p>
 
 <p align="center">
   <picture>
