@@ -172,7 +172,11 @@ I build full-stack products where clean architecture meets interfaces that make 
 </p>
 
 <p align="center">
-  <img width="95%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=imenbouchriha12&theme=midnight_purple" alt="GitHub profile summary" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-light.svg" />
+    <img width="95%" alt="Imen's contribution graph in pink and mauve" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-light.svg" />
+  </picture>
 </p>
 
 <p align="center">

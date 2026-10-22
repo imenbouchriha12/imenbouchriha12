@@ -1,4 +1,4 @@
-name: Generate contribution snake
+name: Generate profile art
 
 on:
   schedule:
@@ -12,16 +12,22 @@ permissions:
   contents: write
 
 jobs:
-  snake:
+  art:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Generate snake SVG
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake.svg?color_snake=#b03a97&color_dots=#ebedf0,#fbd7ef,#f2a9dd,#d96dbb,#b03a97
+            dist/github-snake-dark.svg?color_snake=#ff6ec7&color_dots=#21262d,#4a1d3f,#7d2f69,#b8459c,#ff6ec7
+
+      - name: Generate contribution heatmaps
+        run: node .github/scripts/contributions.mjs
 
       - name: Publish to output branch
         uses: crazy-max/ghaction-github-pages@v4
