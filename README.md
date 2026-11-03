@@ -191,13 +191,6 @@ I build full-stack products where clean architecture meets interfaces that make 
   </picture>
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-light.svg" />
-    <img width="100%" alt="Contribution heatmap" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-dark.svg" />
-  </picture>
-</p>
 
 <p align="center">
   <picture>
