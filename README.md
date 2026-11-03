@@ -110,15 +110,7 @@ I build full-stack products where clean architecture meets interfaces that make 
   <br/>
   <img src="https://img.shields.io/badge/01-FINTECH_%C2%B7_REALTIME-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="01 · Fintech · Realtime" />
   <h3>🏦 BT DocCenter</h3>
-  A real-time banking document hub — OCR, AI-assisted fraud detection, SSIS pipelines and live notifications.
-  <br/><br/>
-  <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" alt="Angular" />
-  <img src="https://img.shields.io/badge/.NET_8-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET 8" />
-  <img src="https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logoColor=white" alt="SignalR" />
-  <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server" />
-  <br/><br/>
-  <a href="https://github.com/imenbouchriha12/BT_DossierBackend"><img src="https://img.shields.io/badge/BACKEND-FF6EC7?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Backend" /></a>
-  <a href="https://github.com/imenbouchriha12/BT_DossierFront"><img src="https://img.shields.io/badge/FRONTEND-22D3EE?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Frontend" /></a>
+
 </td>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/smiters.io">
@@ -128,14 +120,6 @@ I build full-stack products where clean architecture meets interfaces that make 
   <br/>
   <img src="https://img.shields.io/badge/02-AI_%C2%B7_EMAIL-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="02 · AI · Email" />
   <h3>📨 Smiters.io</h3>
-  An AI email co-pilot that writes client-ready replies from incoming mail — engineered, containerized, shipped.
-  <br/><br/>
-  <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" alt="Angular" />
-  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
-  <br/><br/>
-  <a href="https://github.com/imenbouchriha12/smiters.io"><img src="https://img.shields.io/badge/VIEW_PROJECT-9D7BFF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="View project" /></a>
 </td>
 </tr>
 <tr>
@@ -147,15 +131,6 @@ I build full-stack products where clean architecture meets interfaces that make 
   <br/>
   <img src="https://img.shields.io/badge/03-PLATFORM_%C2%B7_FULL_STACK-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="03 · Platform · Full stack" />
   <h3>🧭 PI Platform</h3>
-  A full-stack management platform with JWT auth, PDF reports, scheduled jobs and a themeable, accessible React UI.
-  <br/><br/>
-  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind" />
-  <br/><br/>
-  <a href="https://github.com/imenbouchriha12/PI_Front"><img src="https://img.shields.io/badge/FRONTEND-22D3EE?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Frontend" /></a>
-  <a href="https://github.com/imenbouchriha12/PI_Back"><img src="https://img.shields.io/badge/BACKEND-FF6EC7?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Backend" /></a>
 </td>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/GestionVoiture_NestJs">
@@ -165,14 +140,6 @@ I build full-stack products where clean architecture meets interfaces that make 
   <br/>
   <img src="https://img.shields.io/badge/04-MOBILITY_%C2%B7_REALTIME-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="04 · Mobility · Realtime" />
   <h3>🚗 AutoFlow</h3>
-  Real-time vehicle management with Socket.io and MongoDB — dashboards that update the moment data changes.
-  <br/><br/>
-  <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
-  <img src="https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.io" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-  <br/><br/>
-  <a href="https://github.com/imenbouchriha12/GestionVoiture_NestJs"><img src="https://img.shields.io/badge/VIEW_PROJECT-9D7BFF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="View project" /></a>
 </td>
 </tr>
 <tr>
@@ -184,13 +151,6 @@ I build full-stack products where clean architecture meets interfaces that make 
   <br/>
   <img src="https://img.shields.io/badge/05-OPERATIONS_%C2%B7_SPRING-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="05 · Operations · Spring" />
   <h3>☕ Café Manager</h3>
-  A Spring Boot system for café operations — products, orders and stock flowing through one clean interface.
-  <br/><br/>
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/JPA-59666C?style=flat-square&logo=hibernate&logoColor=white" alt="JPA" />
-  <br/><br/>
-  <a href="https://github.com/imenbouchriha12/GestionCofee-SpringBoot"><img src="https://img.shields.io/badge/VIEW_PROJECT-9D7BFF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="View project" /></a>
 </td>
 <td width="50%" valign="top">
   <a href="https://imen-bouchriha.netlify.app/">
@@ -200,14 +160,6 @@ I build full-stack products where clean architecture meets interfaces that make 
   <br/>
   <img src="https://img.shields.io/badge/06-DESIGN_%C2%B7_PLAYGROUND-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="06 · Design · Playground" />
   <h3>✨ Lumina</h3>
-  A design-forward portfolio and playground for motion, typography and dark-mode aesthetics — live on the web.
-  <br/><br/>
-  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind" />
-  <br/><br/>
-  <a href="https://imen-bouchriha.netlify.app/"><img src="https://img.shields.io/badge/LIVE_SITE-FF6EC7?style=for-the-badge&logo=netlify&logoColor=white&labelColor=0D1117" alt="Live site" /></a>
-  <a href="https://github.com/imenbouchriha12/Imen-s_Portfolio"><img src="https://img.shields.io/badge/SOURCE-22D3EE?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="Source" /></a>
 </td>
 </tr>
 </table>
