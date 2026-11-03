@@ -38,7 +38,7 @@ I build full-stack products where clean architecture meets interfaces that make 
 
 </td>
 <td width="39%" valign="top">
-  <img src="assets/imen.jpg?v=2" alt="Imen Bouchriha" width="100%" />
+  <img src="assets/imen-bordeaux.jpg" alt="Imen Bouchriha" width="100%" />
 </td>
 </tr>
 </table>
