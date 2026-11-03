@@ -56,8 +56,30 @@ I build full-stack products where clean architecture meets interfaces that make 
 <h3 align="center">✦ &nbsp; the arsenal &nbsp; ✦</h3>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=angular,react,ts,js,html,css,tailwind,java,spring,nestjs,cs,dotnet,nodejs,postgres,mongodb,docker,jenkins,git,github&theme=dark&perline=10" alt="Tech stack" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=14&duration=3400&pause=900&color=9D7BFF&center=true&vCenter=true&width=680&lines=currently+exploring%3A+AI+orchestration+%C2%B7+realtime+UX+%C2%B7+design+systems;the+stack+changes%2C+the+obsession+stays+the+same+%E2%80%94+craft" alt="Currently exploring" />
 </p>
+
+<table align="center">
+<tr>
+<td align="center" width="33%" valign="top">
+  <sub><b>01 · INTERFACE</b></sub><br/><br/>
+  <img src="https://skillicons.dev/icons?i=angular,react,ts,js,tailwind,html,css&theme=dark&perline=7" width="252" alt="Frontend stack" /><br/><br/>
+  <sub>design systems · motion<br/>accessible, dark-mode-first</sub>
+</td>
+<td align="center" width="33%" valign="top">
+  <sub><b>02 · ENGINE</b></sub><br/><br/>
+  <img src="https://skillicons.dev/icons?i=cs,dotnet,java,spring,nestjs,nodejs&theme=dark&perline=6" width="216" alt="Backend stack" /><br/><br/>
+  <sub>clean architecture · APIs<br/>real-time with SignalR &amp; sockets</sub>
+</td>
+<td align="center" width="33%" valign="top">
+  <sub><b>03 · FOUNDATIONS</b></sub><br/><br/>
+  <img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,jenkins,git,github&theme=dark&perline=6" width="216" alt="Data and DevOps stack" /><br/><br/>
+  <sub>data modelling · CI/CD<br/>ship small, ship often</sub>
+</td>
+</tr>
+</table>
+
+<br/>
 
 <p align="center">
   <img src="https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="SignalR" />
@@ -68,92 +90,103 @@ I build full-stack products where clean architecture meets interfaces that make 
   <img src="https://img.shields.io/badge/design_systems-FF6EC7?style=flat-square&logo=figma&logoColor=white" alt="Design systems" />
 </p>
 
-<br/>
-
-<table align="center">
-<tr>
-<td align="center" width="33%">
-  <h4>⚙️ &nbsp;engineered</h4>
-  <sub>scalable APIs · clean architecture<br/>real-time systems · CI/CD</sub>
-</td>
-<td align="center" width="33%">
-  <h4>🎨 &nbsp;designed</h4>
-  <sub>design systems · micro-interactions<br/>dark-mode-first UI</sub>
-</td>
-<td align="center" width="33%">
-  <h4>♿ &nbsp;human</h4>
-  <sub>accessibility · clarity<br/>empathy in every flow</sub>
-</td>
-</tr>
-</table>
+<div align="center">
+  <sub>engineered · designed · human — the same three rules, every time.</sub>
+</div>
 
 <br/>
 
 <h3 align="center">✧ &nbsp; selected universes &nbsp; ✧</h3>
 
+<p align="center"><sub>six products, six little worlds — each one designed, built and shipped end-to-end.</sub></p>
+
 <table>
 <tr>
 <td width="50%" valign="top">
-
-**🏦 [BT DocCenter](https://github.com/imenbouchriha12/BT_DossierBackend)** &nbsp;·&nbsp; [frontend](https://github.com/imenbouchriha12/BT_DossierFront)<br/>
-<sub>A real-time banking document hub — OCR, AI-assisted fraud detection, SSIS pipelines and live notifications.</sub><br/><br/>
-<img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
-<img src="https://img.shields.io/badge/.NET_8-512BD4?style=flat-square&logo=dotnet&logoColor=white" />
-<img src="https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logoColor=white" />
-<img src="https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" />
-
+  <a href="https://github.com/imenbouchriha12/BT_DossierBackend">
+    <img src="assets/projects/bt-doccenter.jpg" alt="BT DocCenter — a neon banking vault surrounded by holographic documents" width="100%" />
+  </a>
+  <br/><br/>
+  <sub>01 · FINTECH / REALTIME</sub><br/>
+  <h4>🏦 <a href="https://github.com/imenbouchriha12/BT_DossierBackend">BT DocCenter</a></h4>
+  <sub>A real-time banking document hub — OCR, AI-assisted fraud detection, SSIS pipelines and live notifications.</sub><br/><br/>
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/.NET_8-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET 8" />
+  <img src="https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logoColor=white" alt="SignalR" />
+  <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server" />
+  <br/><br/>
+  <sub><a href="https://github.com/imenbouchriha12/BT_DossierBackend">backend ↗</a> &nbsp;·&nbsp; <a href="https://github.com/imenbouchriha12/BT_DossierFront">frontend ↗</a></sub>
 </td>
 <td width="50%" valign="top">
-
-**📨 [Smiters.io](https://github.com/imenbouchriha12/smiters.io)**<br/>
-<sub>An AI email co-pilot that writes client-ready replies from incoming mail — engineered, containerized, shipped.</sub><br/><br/>
-<img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
-<img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" />
-<img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" />
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-**🧭 [PI Platform](https://github.com/imenbouchriha12/PI_Front)** &nbsp;·&nbsp; [backend](https://github.com/imenbouchriha12/PI_Back)<br/>
-<sub>A full-stack management platform with JWT auth, PDF reports, scheduled jobs and a themeable, accessible React UI.</sub><br/><br/>
-<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" />
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
-
-</td>
-<td width="50%" valign="top">
-
-**🚗 [AutoFlow](https://github.com/imenbouchriha12/GestionVoiture_NestJs)**<br/>
-<sub>Real-time vehicle management with Socket.io and MongoDB — dashboards that update the moment data changes.</sub><br/><br/>
-<img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" />
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" />
-<img src="https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socketdotio&logoColor=white" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-
+  <a href="https://github.com/imenbouchriha12/smiters.io">
+    <img src="assets/projects/smiters-io.jpg" alt="Smiters.io — a glowing envelope dissolving into an AI-written message" width="100%" />
+  </a>
+  <br/><br/>
+  <sub>02 · AI / EMAIL</sub><br/>
+  <h4>📨 <a href="https://github.com/imenbouchriha12/smiters.io">Smiters.io</a></h4>
+  <sub>An AI email co-pilot that writes client-ready replies from incoming mail — engineered, containerized, shipped.</sub><br/><br/>
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-
-**☕ [Café Manager](https://github.com/imenbouchriha12/GestionCofee-SpringBoot)**<br/>
-<sub>A Spring Boot system for café operations — products, orders and stock flowing through one clean interface.</sub><br/><br/>
-<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" />
-<img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" />
-<img src="https://img.shields.io/badge/JPA-59666C?style=flat-square&logo=hibernate&logoColor=white" />
-
+  <a href="https://github.com/imenbouchriha12/PI_Front">
+    <img src="assets/projects/pi-platform.jpg" alt="PI Platform — floating dashboard tiles connected by light" width="100%" />
+  </a>
+  <br/><br/>
+  <sub>03 · PLATFORM / FULL-STACK</sub><br/>
+  <h4>🧭 <a href="https://github.com/imenbouchriha12/PI_Front">PI Platform</a></h4>
+  <sub>A full-stack management platform with JWT auth, PDF reports, scheduled jobs and a themeable, accessible React UI.</sub><br/><br/>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind" />
+  <br/><br/>
+  <sub><a href="https://github.com/imenbouchriha12/PI_Front">frontend ↗</a> &nbsp;·&nbsp; <a href="https://github.com/imenbouchriha12/PI_Back">backend ↗</a></sub>
 </td>
 <td width="50%" valign="top">
-
-**✨ [Lumina](https://imen-bouchriha.netlify.app/)** &nbsp;·&nbsp; [source](https://github.com/imenbouchriha12/Imen-s_Portfolio)<br/>
-<sub>A design-forward portfolio and playground for motion, typography and dark-mode aesthetics — live on the web.</sub><br/><br/>
-<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
-<img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
-
+  <a href="https://github.com/imenbouchriha12/GestionVoiture_NestJs">
+    <img src="assets/projects/autoflow.jpg" alt="AutoFlow — a neon car on a grid road with live telemetry" width="100%" />
+  </a>
+  <br/><br/>
+  <sub>04 · MOBILITY / REALTIME</sub><br/>
+  <h4>🚗 <a href="https://github.com/imenbouchriha12/GestionVoiture_NestJs">AutoFlow</a></h4>
+  <sub>Real-time vehicle management with Socket.io and MongoDB — dashboards that update the moment data changes.</sub><br/><br/>
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.io" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://github.com/imenbouchriha12/GestionCofee-SpringBoot">
+    <img src="assets/projects/cafe-manager.jpg" alt="Café Manager — espresso steam turning into glowing charts" width="100%" />
+  </a>
+  <br/><br/>
+  <sub>05 · OPERATIONS / SPRING</sub><br/>
+  <h4>☕ <a href="https://github.com/imenbouchriha12/GestionCofee-SpringBoot">Café Manager</a></h4>
+  <sub>A Spring Boot system for café operations — products, orders and stock flowing through one clean interface.</sub><br/><br/>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/JPA-59666C?style=flat-square&logo=hibernate&logoColor=white" alt="JPA" />
+</td>
+<td width="50%" valign="top">
+  <a href="https://imen-bouchriha.netlify.app/">
+    <img src="assets/projects/lumina.jpg" alt="Lumina — prisms, constellations and glass interface panels" width="100%" />
+  </a>
+  <br/><br/>
+  <sub>06 · DESIGN / PLAYGROUND</sub><br/>
+  <h4>✨ <a href="https://imen-bouchriha.netlify.app/">Lumina</a></h4>
+  <sub>A design-forward portfolio and playground for motion, typography and dark-mode aesthetics — live on the web.</sub><br/><br/>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind" />
+  <br/><br/>
+  <sub><a href="https://imen-bouchriha.netlify.app/">live site ↗</a> &nbsp;·&nbsp; <a href="https://github.com/imenbouchriha12/Imen-s_Portfolio">source ↗</a></sub>
 </td>
 </tr>
 </table>
@@ -162,15 +195,36 @@ I build full-stack products where clean architecture meets interfaces that make 
 
 <h3 align="center">◈ &nbsp; signal from the grid &nbsp; ◈</h3>
 
+<p align="center"><sub>live telemetry rendered from my own commits, inside this repo — refreshed every 12 hours.</sub></p>
+
 <p align="center">
-  <img height="175" src="https://github-readme-stats.vercel.app/api?username=imenbouchriha12&show_icons=true&hide_border=true&bg_color=0D1117&title_color=FF6EC7&icon_color=9D7BFF&text_color=C9D1D9&rank_icon=github" alt="GitHub stats" />
-  <img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=imenbouchriha12&layout=compact&langs_count=8&hide_border=true&bg_color=0D1117&title_color=FF6EC7&text_color=C9D1D9" alt="Top languages" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/stats-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/stats-light.svg" />
+    <img width="48%" alt="GitHub telemetry" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/stats-dark.svg" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/languages-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/languages-light.svg" />
+    <img width="48%" alt="Top languages" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/languages-dark.svg" />
+  </picture>
 </p>
 
 <p align="center">
-  <img width="72%" src="https://streak-stats.demolab.com?user=imenbouchriha12&hide_border=true&background=0D1117&stroke=30363D&ring=FF6EC7&fire=9D7BFF&currStreakNum=FFFFFF&currStreakLabel=FF6EC7&sideNums=C9D1D9&sideLabels=94A3B8&dates=64748B" alt="GitHub streak" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/streak-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/streak-light.svg" />
+    <img width="97%" alt="Streak telemetry" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/streak-dark.svg" />
+  </picture>
 </p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-light.svg" />
+    <img width="100%" alt="Contribution heatmap" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/contributions-dark.svg" />
+  </picture>
+</p>
 
 <p align="center">
   <picture>
@@ -181,7 +235,7 @@ I build full-stack products where clean architecture meets interfaces that make 
 </p>
 
 <div align="center">
-  <sub>the snake feeds on my commits — refreshed every 12 hours 🐍</sub>
+  <sub>the snake feeds on my commits — telemetry, streak and heatmap regenerate every 12 hours 🐍</sub>
 </div>
 
 <br/>
