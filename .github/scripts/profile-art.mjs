@@ -442,6 +442,181 @@ function renderStreak(theme, data, days, today) {
   );
 }
 
+function renderSignal(theme, data, days, today) {
+  const t = THEMES[theme];
+  const counts = new Map(days.map((day) => [day.date, day.count]));
+  const span = 371;
+  const series = [];
+  for (let index = span - 1; index >= 0; index -= 1) {
+    const key = shiftDay(today, -index);
+    series.push({ date: key, count: counts.get(key) || 0 });
+  }
+
+  const peakCount = Math.max(1, ...series.map((day) => day.count));
+  const peak = series.reduce(
+    (best, day) => (day.count > best.count ? day : best),
+    series[0],
+  );
+  const activeDays = series.filter((day) => day.count > 0).length;
+  const yearTotal = series.reduce((sum, day) => sum + day.count, 0);
+  const average = activeDays ? yearTotal / activeDays : 0;
+  const months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+  const peakLabel = peak.count
+    ? `${months[Number(peak.date.slice(5, 7)) - 1]} ${Number(peak.date.slice(8, 10))}`
+    : "—";
+
+  const LEFT = 430;
+  const RIGHT = 1384;
+  const TOP = 78;
+  const BASE = 212;
+  const AMP = BASE - TOP;
+  const stepX = (RIGHT - LEFT) / (span - 1);
+
+  const points = series.map((day, index) => ({
+    x: Number((LEFT + index * stepX).toFixed(1)),
+    y: Number((BASE - (day.count / peakCount) * AMP).toFixed(1)),
+  }));
+
+  let trace = `M${points[0].x} ${points[0].y}`;
+  for (let index = 0; index < points.length - 1; index += 1) {
+    const p0 = points[Math.max(0, index - 1)];
+    const p1 = points[index];
+    const p2 = points[index + 1];
+    const p3 = points[Math.min(points.length - 1, index + 2)];
+    const c1x = Number((p1.x + (p2.x - p0.x) / 6).toFixed(1));
+    const c1y = Number(
+      Math.min(BASE, Math.max(TOP, p1.y + (p2.y - p0.y) / 6)).toFixed(1),
+    );
+    const c2x = Number((p2.x - (p3.x - p1.x) / 6).toFixed(1));
+    const c2y = Number(
+      Math.min(BASE, Math.max(TOP, p2.y - (p3.y - p1.y) / 6)).toFixed(1),
+    );
+    trace += `C${c1x} ${c1y} ${c2x} ${c2y} ${p2.x} ${p2.y}`;
+  }
+  const area = `${trace}L${RIGHT} ${BASE}L${LEFT} ${BASE}Z`;
+
+  let monthLabels = "";
+  let lastMonth = "";
+  let lastLabelX = -100;
+  series.forEach((day, index) => {
+    const month = day.date.slice(5, 7);
+    if (month === lastMonth) return;
+    const x = LEFT + index * stepX;
+    if (x - lastLabelX >= 64 && x <= RIGHT - 52) {
+      monthLabels += `<text x="${x.toFixed(1)}" y="${BASE + 25}" font-family="${MONO}" font-size="9" letter-spacing="1.4" fill="${t.muted}">${months[Number(month) - 1]}</text>\n  `;
+      lastLabelX = x;
+    }
+    lastMonth = month;
+  });
+
+  const peakPoint =
+    points[series.findIndex((day) => day.date === peak.date)] || points[0];
+  const last = points[points.length - 1];
+
+  const metrics = [
+    { x: 40, value: peak.count, label: `PEAK DAY · ${peakLabel}` },
+    { x: 175, value: average.toFixed(1), label: "AVG / ACTIVE DAY" },
+    { x: 310, value: span - activeDays, label: "QUIET DAYS" },
+  ];
+
+  const metricsMarkup = metrics
+    .map(
+      (metric) => `<text x="${metric.x}" y="199" font-family="${DISPLAY}" font-size="26" font-weight="700" fill="${t.text}">${esc(metric.value)}</text>
+  <text x="${metric.x}" y="221" font-family="${MONO}" font-size="10" letter-spacing="1.2" fill="${t.muted}">${esc(metric.label)}</text>`,
+    )
+    .join("\n  ");
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="280" viewBox="0 0 1440 280" role="img" aria-label="${esc(`${yearTotal} commits over the last year drawn as a signal trace, peak ${peakCount} in a day, ${data.streak.current}-day current streak`)}">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="${t.bg1}"/>
+      <stop offset="100%" stop-color="${t.bg2}"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="${t.accent}"/>
+      <stop offset="55%" stop-color="${t.accent2}"/>
+      <stop offset="100%" stop-color="${t.accent3}"/>
+      <animate attributeName="x1" values="0;0.12;0" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;1.12;1" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${t.accent}" stop-opacity="${theme === "dark" ? 0.3 : 0.18}"/>
+      <stop offset="65%" stop-color="${t.accent2}" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="${t.accent2}" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="${t.accent2}" stop-opacity="0"/>
+      <stop offset="72%" stop-color="${t.accent2}" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="${t.accent3}" stop-opacity="0.38"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${t.accent}" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="${t.accent}" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.05" fill="${t.text}" opacity="${t.dots}"/>
+    </pattern>
+    <filter id="soft" x="-8%" y="-40%" width="116%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <clipPath id="plot">
+      <rect x="${LEFT}" y="${TOP - 6}" width="${RIGHT - LEFT}" height="${BASE - TOP + 6}"/>
+    </clipPath>
+  </defs>
+  <rect x="1" y="1" width="1438" height="278" rx="22" fill="url(#bg)" stroke="${t.border}"/>
+  <rect x="1" y="1" width="1438" height="278" rx="22" fill="url(#dots)"/>
+  <circle cx="1180" cy="0" r="190" fill="url(#glow)"/>
+  <circle cx="120" cy="280" r="180" fill="url(#glow)"/>
+
+  <circle cx="42" cy="38" r="4" fill="${t.accent}">
+    <animate attributeName="opacity" values="1;0.25;1" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+  <text x="56" y="42" font-family="${MONO}" font-size="12" letter-spacing="3" fill="${t.title}">SIGNAL TRACE</text>
+  <text x="1400" y="42" text-anchor="end" font-family="${MONO}" font-size="10" letter-spacing="1.6" fill="${t.muted}">365 DAYS · @${esc(USER)}</text>
+  <rect x="40" y="62" width="1360" height="1" fill="${t.border}" opacity="0.6"/>
+  <rect x="40" y="61" width="150" height="2" rx="1" fill="url(#accent)"/>
+
+  <text x="40" y="120" font-family="${DISPLAY}" font-size="52" font-weight="700" fill="${t.text}">${yearTotal}</text>
+  <text x="42" y="145" font-family="${MONO}" font-size="11" letter-spacing="2.2" fill="${t.muted}">COMMITS · LAST 365 DAYS</text>
+  <rect x="40" y="165" width="352" height="1" fill="${t.border}" opacity="0.7"/>
+  ${metricsMarkup}
+
+  <line x1="${LEFT}" y1="${TOP}" x2="${RIGHT}" y2="${TOP}" stroke="${t.border}" stroke-opacity="0.35" stroke-dasharray="2 8"/>
+  <line x1="${LEFT}" y1="${TOP + AMP / 2}" x2="${RIGHT}" y2="${TOP + AMP / 2}" stroke="${t.border}" stroke-opacity="0.35" stroke-dasharray="2 8"/>
+  <line x1="${LEFT}" y1="${BASE}" x2="${RIGHT}" y2="${BASE}" stroke="${t.border}" stroke-opacity="0.7"/>
+
+  <g clip-path="url(#plot)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;${RIGHT - LEFT + 110} 0" dur="9s" repeatCount="indefinite"/>
+      <rect x="${LEFT - 110}" y="${TOP - 6}" width="110" height="${BASE - TOP + 6}" fill="url(#scan)"/>
+      <rect x="${LEFT - 1.2}" y="${TOP - 6}" width="1.2" height="${BASE - TOP + 6}" fill="${t.accent3}" opacity="0.5"/>
+    </g>
+    <path d="${area}" fill="url(#fill)" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="1.8s" fill="freeze" begin="0.5s"/>
+    </path>
+    <path d="${trace}" fill="none" stroke="url(#accent)" stroke-width="7" stroke-linecap="round" filter="url(#soft)" opacity="0">
+      <animate attributeName="opacity" values="0;0.28" dur="1.6s" fill="freeze" begin="2.6s"/>
+    </path>
+    <path d="${trace}" fill="none" stroke="url(#accent)" stroke-width="2.2" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+      <animate attributeName="stroke-dashoffset" values="1;0" dur="3.4s" fill="freeze" begin="0.3s"/>
+    </path>
+  </g>
+
+  <circle cx="${last.x}" cy="${last.y}" r="10" fill="${t.accent3}" opacity="0.16">
+    <animate attributeName="opacity" values="0.08;0.24;0.08" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="${last.x}" cy="${last.y}" r="3.6" fill="${t.accent3}"/>
+  <text x="${RIGHT}" y="${TOP - 14}" text-anchor="end" font-family="${MONO}" font-size="9" letter-spacing="1.6" fill="${t.muted}">TODAY</text>
+  <circle cx="${peakPoint.x}" cy="${peakPoint.y}" r="4.4" fill="none" stroke="${t.accent2}" stroke-width="1.3" stroke-opacity="0.9">
+    <animate attributeName="r" values="4.4;6.2;4.4" dur="3.6s" repeatCount="indefinite"/>
+  </circle>
+
+  ${monthLabels}<text x="40" y="262" font-family="${MONO}" font-size="9.5" fill="${t.muted}">peak ${esc(peakLabel)} · rendered in-repo · refreshes every 12h</text>
+  <text x="1400" y="262" text-anchor="end" font-family="${MONO}" font-size="9.5" letter-spacing="1.2" fill="${t.muted}">THE GRID NEVER SLEEPS</text>
+</svg>
+`;
+}
+
 function renderHeatmap(theme, days, total, today) {
   const t = THEMES[theme];
   const levelFor = contributionLevels(days);
@@ -672,6 +847,10 @@ for (const theme of ["dark", "light"]) {
   await fs.writeFile(
     `${OUT_DIR}/contributions-${theme}.svg`,
     renderHeatmap(theme, contributions.days, contributions.total, today),
+  );
+  await fs.writeFile(
+    `${OUT_DIR}/signal-${theme}.svg`,
+    renderSignal(theme, data, contributions.days, today),
   );
 }
 

@@ -18,15 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate snake SVG
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg?color_snake=#b03a97&color_dots=#ebedf0,#fbd7ef,#f2a9dd,#d96dbb,#b03a97
-            dist/github-snake-dark.svg?color_snake=#ff6ec7&color_dots=#21262d,#4a1d3f,#7d2f69,#b8459c,#ff6ec7
-
-      - name: Generate telemetry cards and heatmaps
+      - name: Generate telemetry cards, heatmaps and signal trace
         run: node .github/scripts/profile-art.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
