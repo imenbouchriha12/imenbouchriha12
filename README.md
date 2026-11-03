@@ -28,7 +28,7 @@ Software engineer, full-stack by range, detail-obsessed by default. From AI-assi
 
 </td>
 <td width="39%" valign="top">
-  <img src="assets/portrait-card.jpg" alt="Imen Bouchriha — software engineer, full-stack. Open to collaborations." width="100%" />
+  <img src="assets/identity-card.svg" alt="Imen Bouchriha — signature card: IB monogram, software engineer, full-stack. Open to collaborations." width="100%" />
 </td>
 </tr>
 </table>
