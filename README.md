@@ -104,62 +104,37 @@ I build full-stack products where clean architecture meets interfaces that make 
 <tr>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/BT_DossierBackend">
-    <img src="assets/projects/bt-doccenter.jpg" alt="BT DocCenter — a neon banking vault surrounded by holographic documents" width="100%" />
+    <img src="assets/projects/bt-doccenter.jpg" alt="BT DocCenter — real-time banking document hub with OCR, AI-assisted fraud detection, SSIS pipelines and live notifications. Angular, .NET 8, SignalR, SQL Server. Opens the backend repository." width="100%" />
   </a>
-  <img src="assets/projects/divider.svg" width="100%" alt="" />
-  <br/>
-  <img src="https://img.shields.io/badge/01-FINTECH_%C2%B7_REALTIME-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="01 · Fintech · Realtime" />
-  <h3>🏦 BT DocCenter</h3>
-
 </td>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/smiters.io">
-    <img src="assets/projects/smiters-io.jpg" alt="Smiters.io — a glowing envelope dissolving into an AI-written message" width="100%" />
+    <img src="assets/projects/smiters-io.jpg" alt="Smiters.io — AI email co-pilot that writes client-ready replies from incoming mail. Angular, Spring Boot, OpenAI, Docker. Opens the project repository." width="100%" />
   </a>
-  <img src="assets/projects/divider.svg" width="100%" alt="" />
-  <br/>
-  <img src="https://img.shields.io/badge/02-AI_%C2%B7_EMAIL-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="02 · AI · Email" />
-  <h3>📨 Smiters.io</h3>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/PI_Front">
-    <img src="assets/projects/pi-platform.jpg" alt="PI Platform — floating dashboard tiles connected by light" width="100%" />
+    <img src="assets/projects/pi-platform.jpg" alt="PI Platform — full-stack management platform with JWT auth, PDF reports, scheduled jobs and a themeable, accessible React UI. React, NestJS, PostgreSQL, Tailwind. Opens the frontend repository." width="100%" />
   </a>
-  <img src="assets/projects/divider.svg" width="100%" alt="" />
-  <br/>
-  <img src="https://img.shields.io/badge/03-PLATFORM_%C2%B7_FULL_STACK-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="03 · Platform · Full stack" />
-  <h3>🧭 PI Platform</h3>
 </td>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/GestionVoiture_NestJs">
-    <img src="assets/projects/autoflow.jpg" alt="AutoFlow — a neon car on a grid road with live telemetry" width="100%" />
+    <img src="assets/projects/autoflow.jpg" alt="AutoFlow — real-time vehicle management with Socket.io and MongoDB. NestJS, MongoDB, Socket.io, TypeScript. Opens the project repository." width="100%" />
   </a>
-  <img src="assets/projects/divider.svg" width="100%" alt="" />
-  <br/>
-  <img src="https://img.shields.io/badge/04-MOBILITY_%C2%B7_REALTIME-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="04 · Mobility · Realtime" />
-  <h3>🚗 AutoFlow</h3>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/GestionCofee-SpringBoot">
-    <img src="assets/projects/cafe-manager.jpg" alt="Café Manager — espresso steam turning into glowing charts" width="100%" />
+    <img src="assets/projects/cafe-manager.jpg" alt="Café Manager — Spring Boot system for café operations, products, orders and stock. Java, Spring Boot, JPA. Opens the project repository." width="100%" />
   </a>
-  <img src="assets/projects/divider.svg" width="100%" alt="" />
-  <br/>
-  <img src="https://img.shields.io/badge/05-OPERATIONS_%C2%B7_SPRING-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="05 · Operations · Spring" />
-  <h3>☕ Café Manager</h3>
 </td>
 <td width="50%" valign="top">
   <a href="https://imen-bouchriha.netlify.app/">
-    <img src="assets/projects/lumina.jpg" alt="Lumina — prisms, constellations and glass interface panels" width="100%" />
+    <img src="assets/projects/lumina.jpg" alt="Lumina — design-forward portfolio and playground for motion, typography and dark-mode aesthetics. React, Vite, Tailwind. Opens the live site." width="100%" />
   </a>
-  <img src="assets/projects/divider.svg" width="100%" alt="" />
-  <br/>
-  <img src="https://img.shields.io/badge/06-DESIGN_%C2%B7_PLAYGROUND-FF6EC7?style=flat-square&labelColor=0D1117&logoColor=white" alt="06 · Design · Playground" />
-  <h3>✨ Lumina</h3>
 </td>
 </tr>
 </table>
@@ -191,7 +166,6 @@ I build full-stack products where clean architecture meets interfaces that make 
   </picture>
 </p>
 
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/github-snake-dark.svg" />
@@ -201,7 +175,7 @@ I build full-stack products where clean architecture meets interfaces that make 
 </p>
 
 <div align="center">
-  <sub>the snake feeds on my commits — telemetry, streak and heatmap regenerate every 12 hours 🐍</sub>
+  <sub>the snake feeds on my commits — telemetry and streak regenerate every 12 hours 🐍</sub>
 </div>
 
 <br/>
