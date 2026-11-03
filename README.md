@@ -104,36 +104,36 @@ I build full-stack products where clean architecture meets interfaces that make 
 <tr>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/BT_DossierBackend">
-    <img src="assets/projects/bt-doccenter.jpg" alt="BT DocCenter — real-time banking document hub with OCR, AI-assisted fraud detection, SSIS pipelines and live notifications. Angular, .NET 8, SignalR, SQL Server. Opens the backend repository." width="100%" />
+    <img src="assets/projects/bt-doccenter.jpg?v=2" alt="BT DocCenter — real-time banking document hub with OCR, AI-assisted fraud detection, SSIS pipelines and live notifications. Angular, .NET 8, SignalR, SQL Server. Opens the backend repository." width="100%" />
   </a>
 </td>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/smiters.io">
-    <img src="assets/projects/smiters-io.jpg" alt="Smiters.io — AI email co-pilot that writes client-ready replies from incoming mail. Angular, Spring Boot, OpenAI, Docker. Opens the project repository." width="100%" />
+    <img src="assets/projects/smiters-io.jpg?v=2" alt="Smiters.io — AI email co-pilot that writes client-ready replies from incoming mail. Angular, Spring Boot, OpenAI, Docker. Opens the project repository." width="100%" />
   </a>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/PI_Front">
-    <img src="assets/projects/pi-platform.jpg" alt="PI Platform — full-stack management platform with JWT auth, PDF reports, scheduled jobs and a themeable, accessible React UI. React, NestJS, PostgreSQL, Tailwind. Opens the frontend repository." width="100%" />
+    <img src="assets/projects/pi-platform.jpg?v=2" alt="PI Platform — full-stack management platform with JWT auth, PDF reports, scheduled jobs and a themeable, accessible React UI. React, NestJS, PostgreSQL, Tailwind. Opens the frontend repository." width="100%" />
   </a>
 </td>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/GestionVoiture_NestJs">
-    <img src="assets/projects/autoflow.jpg" alt="AutoFlow — real-time vehicle management with Socket.io and MongoDB. NestJS, MongoDB, Socket.io, TypeScript. Opens the project repository." width="100%" />
+    <img src="assets/projects/autoflow.jpg?v=2" alt="AutoFlow — real-time vehicle management with Socket.io and MongoDB. NestJS, MongoDB, Socket.io, TypeScript. Opens the project repository." width="100%" />
   </a>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
   <a href="https://github.com/imenbouchriha12/GestionCofee-SpringBoot">
-    <img src="assets/projects/cafe-manager.jpg" alt="Café Manager — Spring Boot system for café operations, products, orders and stock. Java, Spring Boot, JPA. Opens the project repository." width="100%" />
+    <img src="assets/projects/cafe-manager.jpg?v=2" alt="Café Manager — Spring Boot system for café operations, products, orders and stock. Java, Spring Boot, JPA. Opens the project repository." width="100%" />
   </a>
 </td>
 <td width="50%" valign="top">
   <a href="https://imen-bouchriha.netlify.app/">
-    <img src="assets/projects/lumina.jpg" alt="Lumina — design-forward portfolio and playground for motion, typography and dark-mode aesthetics. React, Vite, Tailwind. Opens the live site." width="100%" />
+    <img src="assets/projects/lumina.jpg?v=2" alt="Lumina — design-forward portfolio and playground for motion, typography and dark-mode aesthetics. React, Vite, Tailwind. Opens the live site." width="100%" />
   </a>
 </td>
 </tr>
