@@ -442,91 +442,150 @@ function renderStreak(theme, data, days, today) {
   );
 }
 
-function renderSignal(theme, data, days, today) {
+function renderSkyline(theme, data, days, today) {
   const t = THEMES[theme];
   const counts = new Map(days.map((day) => [day.date, day.count]));
-  const span = 371;
-  const series = [];
-  for (let index = span - 1; index >= 0; index -= 1) {
-    const key = shiftDay(today, -index);
-    series.push({ date: key, count: counts.get(key) || 0 });
-  }
-
-  const peakCount = Math.max(1, ...series.map((day) => day.count));
-  const peak = series.reduce(
-    (best, day) => (day.count > best.count ? day : best),
-    series[0],
-  );
-  const activeDays = series.filter((day) => day.count > 0).length;
-  const yearTotal = series.reduce((sum, day) => sum + day.count, 0);
-  const average = activeDays ? yearTotal / activeDays : 0;
-  const months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
-  const peakLabel = peak.count
-    ? `${months[Number(peak.date.slice(5, 7)) - 1]} ${Number(peak.date.slice(8, 10))}`
-    : "—";
-
-  const LEFT = 430;
-  const RIGHT = 1384;
-  const TOP = 78;
-  const BASE = 212;
-  const AMP = BASE - TOP;
-  const stepX = (RIGHT - LEFT) / (span - 1);
-
-  const points = series.map((day, index) => ({
-    x: Number((LEFT + index * stepX).toFixed(1)),
-    y: Number((BASE - (day.count / peakCount) * AMP).toFixed(1)),
-  }));
-
-  let trace = `M${points[0].x} ${points[0].y}`;
-  for (let index = 0; index < points.length - 1; index += 1) {
-    const p0 = points[Math.max(0, index - 1)];
-    const p1 = points[index];
-    const p2 = points[index + 1];
-    const p3 = points[Math.min(points.length - 1, index + 2)];
-    const c1x = Number((p1.x + (p2.x - p0.x) / 6).toFixed(1));
-    const c1y = Number(
-      Math.min(BASE, Math.max(TOP, p1.y + (p2.y - p0.y) / 6)).toFixed(1),
-    );
-    const c2x = Number((p2.x - (p3.x - p1.x) / 6).toFixed(1));
-    const c2y = Number(
-      Math.min(BASE, Math.max(TOP, p2.y - (p3.y - p1.y) / 6)).toFixed(1),
-    );
-    trace += `C${c1x} ${c1y} ${c2x} ${c2y} ${p2.x} ${p2.y}`;
-  }
-  const area = `${trace}L${RIGHT} ${BASE}L${LEFT} ${BASE}Z`;
-
-  let monthLabels = "";
-  let lastMonth = "";
-  let lastLabelX = -100;
-  series.forEach((day, index) => {
-    const month = day.date.slice(5, 7);
-    if (month === lastMonth) return;
-    const x = LEFT + index * stepX;
-    if (x - lastLabelX >= 64 && x <= RIGHT - 52) {
-      monthLabels += `<text x="${x.toFixed(1)}" y="${BASE + 25}" font-family="${MONO}" font-size="9" letter-spacing="1.4" fill="${t.muted}">${months[Number(month) - 1]}</text>\n  `;
-      lastLabelX = x;
+  const weeks = [];
+  const WEEKS = 53;
+  for (let index = WEEKS - 1; index >= 0; index -= 1) {
+    let sum = 0;
+    let active = 0;
+    for (let offset = 0; offset < 7; offset += 1) {
+      const count = counts.get(shiftDay(today, -(index * 7 + offset))) || 0;
+      sum += count;
+      if (count > 0) active += 1;
     }
-    lastMonth = month;
+    weeks.push({ sum, active });
+  }
+
+  const best = Math.max(1, ...weeks.map((week) => week.sum));
+  const total = weeks.reduce((sum, week) => sum + week.sum, 0);
+  const peakIndex = weeks.findIndex((week) => week.sum === best);
+
+  const LEFT = 40;
+  const RIGHT = 1400;
+  const BASE = 300;
+  const SUN_X = 1100;
+  const SUN_R = 170;
+  const step = (RIGHT - LEFT) / WEEKS;
+  const palette = [t.accent, t.accent2, t.accent3];
+
+  const hash = (a, b, c) => {
+    let value =
+      Math.imul(a + 1, 73856093) ^
+      Math.imul(b + 1, 19349663) ^
+      Math.imul(c + 1, 83492791);
+    value = Math.imul(value ^ (value >>> 13), 1274126177);
+    return ((value ^ (value >>> 16)) >>> 0) / 4294967295;
+  };
+
+  let towers = "";
+  let lights = "";
+  let mirrors = "";
+  let marks = "";
+
+  weeks.forEach((week, index) => {
+    const ratio = week.sum / best;
+    const bw = Number((13 + ratio * 7).toFixed(1));
+    const x = Number((LEFT + index * step + (step - bw) / 2).toFixed(1));
+    const height = 20 + ratio * 160;
+    const top = Number((BASE - height).toFixed(1));
+    const color = palette[index % palette.length];
+    const center = Number((x + bw / 2).toFixed(1));
+    const crowned = ratio > 0.5;
+    const crownW = Number((bw * 0.52).toFixed(1));
+    const crownX = Number((x + (bw - crownW) / 2).toFixed(1));
+    const crownTop = Number((top - (crowned ? 7 : 0)).toFixed(1));
+    const antenna = ratio > 0.82;
+    const antennaTop = Number((crownTop - (antenna ? 10 : 0)).toFixed(1));
+
+    towers += `<rect x="${x}" y="${top}" width="${bw}" height="${height.toFixed(1)}" rx="2" fill="url(#tower)" stroke="${color}" stroke-opacity="${week.sum ? 0.5 : 0.2}" stroke-width="1"/>
+  <rect x="${x}" y="${top}" width="${bw}" height="2.2" rx="1" fill="${color}" opacity="${week.sum ? 0.9 : 0.32}"/>
+  `;
+    if (crowned) {
+      towers += `<rect x="${crownX}" y="${crownTop}" width="${crownW}" height="7" rx="1.4" fill="url(#tower)" stroke="${color}" stroke-opacity="0.45" stroke-width="0.9"/>
+  `;
+    }
+    if (antenna) {
+      towers += `<line x1="${center}" y1="${crownTop}" x2="${center}" y2="${antennaTop}" stroke="${color}" stroke-width="1" opacity="0.65"/>
+  `;
+    }
+
+    mirrors += `<rect x="${x}" y="${top}" width="${bw}" height="${height.toFixed(1)}" rx="2" fill="url(#tower)" opacity="0.65"/>
+  <rect x="${x}" y="${top}" width="${bw}" height="1" fill="${color}" opacity="0.3"/>
+  `;
+    if (crowned) {
+      mirrors += `<rect x="${crownX}" y="${crownTop}" width="${crownW}" height="7" rx="1.4" fill="url(#tower)" opacity="0.65"/>
+  `;
+    }
+
+    const rows = Math.floor((height - 12) / 8);
+    const lit = 0.05 + (week.active / 7) * 0.8;
+    for (let row = 0; row < rows; row += 1) {
+      for (let col = 0; col < 2; col += 1) {
+        if (hash(index, row, col) > lit) continue;
+        const wx = Number((x + (bw - 10) / 2 + col * 6).toFixed(1));
+        const wy = Number((top + 8 + row * 8).toFixed(1));
+        const twinkle = hash(index, row, col + 7) > 0.88;
+        lights += twinkle
+          ? `<rect x="${wx}" y="${wy}" width="3.6" height="4" rx="1" fill="${color}" opacity="0.75"><animate attributeName="opacity" values="0.2;0.95;0.2" dur="${(3 + hash(index, row, col + 3) * 4).toFixed(1)}s" repeatCount="indefinite"/></rect>
+  `
+          : `<rect x="${wx}" y="${wy}" width="3.6" height="4" rx="1" fill="${color}" opacity="0.72"/>
+  `;
+      }
+    }
+
+    if (index === peakIndex) {
+      marks += `<path d="M${center} ${antennaTop - 6} l2.4 -2.4 l2.4 2.4 l-2.4 2.4 Z" fill="${t.accent3}">
+    <animate attributeName="opacity" values="0.95;0.3;0.95" dur="3.2s" repeatCount="indefinite"/>
+  </path>
+  `;
+    }
+
+    if (index === WEEKS - 1) {
+      marks += `<line x1="${center}" y1="${top}" x2="${center}" y2="${top - 12}" stroke="${t.accent3}" stroke-width="1.1" opacity="0.75"/>
+  <circle cx="${center}" cy="${top - 15}" r="6" fill="${t.accent3}" opacity="0.16">
+    <animate attributeName="opacity" values="0.08;0.3;0.08" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="${center}" cy="${top - 15}" r="2.4" fill="${t.accent3}"/>
+  <text x="${center}" y="${top - 26}" text-anchor="middle" font-family="${MONO}" font-size="8.5" letter-spacing="1.4" fill="${t.muted}">TODAY</text>
+  `;
+    }
   });
 
-  const peakPoint =
-    points[series.findIndex((day) => day.date === peak.date)] || points[0];
-  const last = points[points.length - 1];
+  let stars = "";
+  for (let index = 0; index < 46; index += 1) {
+    const sx = Number((LEFT + hash(index, 11, 1) * (RIGHT - LEFT)).toFixed(1));
+    const sy = Number((68 + hash(index, 12, 2) * 216).toFixed(1));
+    const radius = Number((0.7 + hash(index, 13, 3) * 1.2).toFixed(1));
+    const opacity = Number((0.16 + hash(index, 14, 4) * 0.5).toFixed(2));
+    stars += `<circle cx="${sx}" cy="${sy}" r="${radius}" fill="${theme === "dark" ? "#ffffff" : t.accent2}" opacity="${opacity}">
+    <animate attributeName="opacity" values="${opacity};${(opacity * 0.22).toFixed(2)};${opacity}" dur="${(2.4 + hash(index, 15, 5) * 4).toFixed(1)}s" repeatCount="indefinite"/>
+  </circle>
+  `;
+  }
 
-  const metrics = [
-    { x: 40, value: peak.count, label: `PEAK DAY · ${peakLabel}` },
-    { x: 175, value: average.toFixed(1), label: "AVG / ACTIVE DAY" },
-    { x: 310, value: span - activeDays, label: "QUIET DAYS" },
+  const hud = [
+    { x: 48, value: total, label: "COMMITS · 365 DAYS", color: t.accent },
+    { x: 258, value: best, label: "BEST WEEK", color: t.accent2 },
+    {
+      x: 418,
+      value: data.streak.current,
+      suffix: "d",
+      label: "CURRENT STREAK",
+      color: t.accent3,
+    },
   ];
 
-  const metricsMarkup = metrics
+  const hudMarkup = hud
     .map(
-      (metric) => `<text x="${metric.x}" y="199" font-family="${DISPLAY}" font-size="26" font-weight="700" fill="${t.text}">${esc(metric.value)}</text>
-  <text x="${metric.x}" y="221" font-family="${MONO}" font-size="10" letter-spacing="1.2" fill="${t.muted}">${esc(metric.label)}</text>`,
+      (metric) => `<text x="${metric.x}" y="112" font-family="${DISPLAY}" font-size="32" font-weight="700" fill="${t.text}">${esc(metric.value)}${metric.suffix ? `<tspan font-size="17" fill="${t.muted}">${metric.suffix}</tspan>` : ""}</text>
+  <circle cx="${metric.x + 4}" cy="130" r="2.6" fill="${metric.color}"/>
+  <text x="${metric.x + 13}" y="133" font-family="${MONO}" font-size="9.5" letter-spacing="1.5" fill="${t.muted}">${esc(metric.label)}</text>`,
     )
     .join("\n  ");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="280" viewBox="0 0 1440 280" role="img" aria-label="${esc(`${yearTotal} commits over the last year drawn as a signal trace, peak ${peakCount} in a day, ${data.streak.current}-day current streak`)}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="400" viewBox="0 0 1440 400" role="img" aria-label="${esc(`${total} commits over the last year drawn as a midnight skyline, best week ${best}, ${data.streak.current}-day current streak`)}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="${t.bg1}"/>
@@ -539,16 +598,29 @@ function renderSignal(theme, data, days, today) {
       <animate attributeName="x1" values="0;0.12;0" dur="9s" repeatCount="indefinite"/>
       <animate attributeName="x2" values="1;1.12;1" dur="9s" repeatCount="indefinite"/>
     </linearGradient>
-    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="${t.accent}" stop-opacity="${theme === "dark" ? 0.3 : 0.18}"/>
-      <stop offset="65%" stop-color="${t.accent2}" stop-opacity="0.07"/>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="${t.accent}" stop-opacity="0"/>
+      <stop offset="30%" stop-color="${t.accent}" stop-opacity="0.65"/>
+      <stop offset="60%" stop-color="${t.accent2}" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="${t.accent3}" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${theme === "dark" ? "#241638" : "#4a3763"}"/>
+      <stop offset="100%" stop-color="${theme === "dark" ? "#0a0c14" : "#241a35"}"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${t.accent}"/>
+      <stop offset="55%" stop-color="${t.accent2}"/>
+      <stop offset="100%" stop-color="${theme === "dark" ? "#3a1d5c" : "#c9b6ef"}"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="55%" stop-color="${t.accent}" stop-opacity="${theme === "dark" ? 0.3 : 0.16}"/>
+      <stop offset="100%" stop-color="${t.accent}" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haze" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${t.accent2}" stop-opacity="${theme === "dark" ? 0.16 : 0.1}"/>
       <stop offset="100%" stop-color="${t.accent2}" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="${t.accent2}" stop-opacity="0"/>
-      <stop offset="72%" stop-color="${t.accent2}" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="${t.accent3}" stop-opacity="0.38"/>
-    </linearGradient>
+    </radialGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="${t.accent}" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="${t.accent}" stop-opacity="0"/>
@@ -556,63 +628,98 @@ function renderSignal(theme, data, days, today) {
     <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
       <circle cx="1.5" cy="1.5" r="1.05" fill="${t.text}" opacity="${t.dots}"/>
     </pattern>
-    <filter id="soft" x="-8%" y="-40%" width="116%" height="180%">
-      <feGaussianBlur stdDeviation="6"/>
+    <filter id="auroraBlur" x="-10%" y="-60%" width="120%" height="220%">
+      <feGaussianBlur stdDeviation="13"/>
     </filter>
-    <clipPath id="plot">
-      <rect x="${LEFT}" y="${TOP - 6}" width="${RIGHT - LEFT}" height="${BASE - TOP + 6}"/>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="${theme === "dark" ? 0.55 : 0.18}"/>
+    </filter>
+    <clipPath id="sunClip">
+      <rect x="${SUN_X - SUN_R}" y="${BASE - SUN_R}" width="${SUN_R * 2}" height="${SUN_R}"/>
     </clipPath>
+    <linearGradient id="comet" gradientUnits="userSpaceOnUse" x1="860" y1="88" x2="952" y2="51">
+      <stop offset="0%" stop-color="${t.accent3}" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="${t.accent3}" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fade" gradientUnits="userSpaceOnUse" x1="0" y1="${BASE}" x2="0" y2="372">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#ffffff" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="reflect">
+      <rect x="0" y="${BASE}" width="1440" height="80" fill="url(#fade)"/>
+    </mask>
   </defs>
-  <rect x="1" y="1" width="1438" height="278" rx="22" fill="url(#bg)" stroke="${t.border}"/>
-  <rect x="1" y="1" width="1438" height="278" rx="22" fill="url(#dots)"/>
-  <circle cx="1180" cy="0" r="190" fill="url(#glow)"/>
-  <circle cx="120" cy="280" r="180" fill="url(#glow)"/>
+  <rect x="1" y="1" width="1438" height="398" rx="22" fill="url(#bg)" stroke="${t.border}"/>
+  <rect x="1" y="1" width="1438" height="398" rx="22" fill="url(#dots)"/>
+  <ellipse cx="720" cy="${BASE}" rx="640" ry="96" fill="url(#haze)"/>
+  <circle cx="120" cy="10" r="160" fill="url(#glow)"/>
+  <circle cx="1330" cy="400" r="170" fill="url(#glow)"/>
+
+  <g filter="url(#auroraBlur)" opacity="${theme === "dark" ? 0.32 : 0.22}">
+    <path d="M-40 122 C 220 78 430 132 690 100 C 930 72 1170 128 1480 88" fill="none" stroke="url(#aurora)" stroke-width="26">
+      <animateTransform attributeName="transform" type="translate" values="0 0;18 -6;0 0" dur="15s" repeatCount="indefinite"/>
+    </path>
+    <path d="M-40 96 C 250 60 470 108 720 84 C 980 60 1220 104 1480 70" fill="none" stroke="url(#aurora)" stroke-width="14" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" values="0 0;-14 5;0 0" dur="18s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  ${stars}
+
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6;0.64;0.72;0.76;1" dur="14s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;-180 70;-180 70" keyTimes="0;0.6;0.74;1" dur="14s" repeatCount="indefinite"/>
+    <line x1="860" y1="88" x2="952" y2="51" stroke="url(#comet)" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="860" cy="88" r="9" fill="${t.accent3}" opacity="0.2"/>
+    <circle cx="860" cy="88" r="2.4" fill="${t.accent3}"/>
+  </g>
+
+  <circle cx="${SUN_X}" cy="${BASE}" r="250" fill="url(#sunGlow)">
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  <g clip-path="url(#sunClip)">
+    <circle cx="${SUN_X}" cy="${BASE}" r="${SUN_R}" fill="url(#sun)" opacity="${theme === "dark" ? 0.62 : 0.5}">
+      <animate attributeName="opacity" values="${theme === "dark" ? "0.56" : "0.44"};${theme === "dark" ? "0.68" : "0.55"};${theme === "dark" ? "0.56" : "0.44"}" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <g opacity="${theme === "dark" ? 0.85 : 0.72}">
+      <rect x="${SUN_X - SUN_R}" y="206" width="${SUN_R * 2}" height="5" fill="${t.bg1}"/>
+      <rect x="${SUN_X - SUN_R}" y="224" width="${SUN_R * 2}" height="6" fill="${t.bg1}"/>
+      <rect x="${SUN_X - SUN_R}" y="244" width="${SUN_R * 2}" height="7" fill="${t.bg1}"/>
+      <rect x="${SUN_X - SUN_R}" y="266" width="${SUN_R * 2}" height="8" fill="${t.bg1}"/>
+      <rect x="${SUN_X - SUN_R}" y="290" width="${SUN_R * 2}" height="8" fill="${t.bg1}"/>
+    </g>
+  </g>
+
+  ${towers}${lights}${marks}
+  <line x1="${LEFT}" y1="${BASE}" x2="${RIGHT}" y2="${BASE}" stroke="url(#accent)" stroke-width="1.4" opacity="0.55"/>
+  <line x1="${LEFT}" y1="${BASE}" x2="${RIGHT}" y2="${BASE}" stroke="${t.accent3}" stroke-width="4" opacity="0.14" filter="url(#auroraBlur)"/>
+  <ellipse cx="${SUN_X}" cy="318" rx="150" ry="20" fill="url(#sunGlow)" opacity="0.9"/>
+
+  <g mask="url(#reflect)">
+    <g transform="translate(0 405) scale(1 -0.35)">${mirrors}</g>
+  </g>
+  <rect x="${LEFT}" y="316" width="${RIGHT - LEFT}" height="1.2" fill="url(#accent)" opacity="0.14">
+    <animate attributeName="opacity" values="0.05;0.2;0.05" dur="7s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="${LEFT}" y="334" width="${RIGHT - LEFT}" height="1" fill="url(#accent)" opacity="0.09">
+    <animate attributeName="opacity" values="0.03;0.13;0.03" dur="9s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="${LEFT}" y="354" width="${RIGHT - LEFT}" height="1" fill="url(#accent)" opacity="0.06"/>
+
+  <rect x="28" y="76" width="548" height="74" rx="14" fill="${theme === "dark" ? "#0e1019" : "#ffffff"}" stroke="${t.border}" stroke-opacity="0.8" filter="url(#cardShadow)"/>
+  ${hudMarkup}
 
   <circle cx="42" cy="38" r="4" fill="${t.accent}">
     <animate attributeName="opacity" values="1;0.25;1" dur="2.6s" repeatCount="indefinite"/>
   </circle>
-  <text x="56" y="42" font-family="${MONO}" font-size="12" letter-spacing="3" fill="${t.title}">SIGNAL TRACE</text>
-  <text x="1400" y="42" text-anchor="end" font-family="${MONO}" font-size="10" letter-spacing="1.6" fill="${t.muted}">365 DAYS · @${esc(USER)}</text>
+  <text x="56" y="42" font-family="${MONO}" font-size="12" letter-spacing="3" fill="${t.title}">MIDNIGHT SKYLINE</text>
+  <text x="1400" y="42" text-anchor="end" font-family="${MONO}" font-size="10" letter-spacing="1.6" fill="${t.muted}">A YEAR OF NIGHT BUILDS · @${esc(USER)}</text>
   <rect x="40" y="62" width="1360" height="1" fill="${t.border}" opacity="0.6"/>
   <rect x="40" y="61" width="150" height="2" rx="1" fill="url(#accent)"/>
 
-  <text x="40" y="120" font-family="${DISPLAY}" font-size="52" font-weight="700" fill="${t.text}">${yearTotal}</text>
-  <text x="42" y="145" font-family="${MONO}" font-size="11" letter-spacing="2.2" fill="${t.muted}">COMMITS · LAST 365 DAYS</text>
-  <rect x="40" y="165" width="352" height="1" fill="${t.border}" opacity="0.7"/>
-  ${metricsMarkup}
-
-  <line x1="${LEFT}" y1="${TOP}" x2="${RIGHT}" y2="${TOP}" stroke="${t.border}" stroke-opacity="0.35" stroke-dasharray="2 8"/>
-  <line x1="${LEFT}" y1="${TOP + AMP / 2}" x2="${RIGHT}" y2="${TOP + AMP / 2}" stroke="${t.border}" stroke-opacity="0.35" stroke-dasharray="2 8"/>
-  <line x1="${LEFT}" y1="${BASE}" x2="${RIGHT}" y2="${BASE}" stroke="${t.border}" stroke-opacity="0.7"/>
-
-  <g clip-path="url(#plot)">
-    <g>
-      <animateTransform attributeName="transform" type="translate" values="0 0;${RIGHT - LEFT + 110} 0" dur="9s" repeatCount="indefinite"/>
-      <rect x="${LEFT - 110}" y="${TOP - 6}" width="110" height="${BASE - TOP + 6}" fill="url(#scan)"/>
-      <rect x="${LEFT - 1.2}" y="${TOP - 6}" width="1.2" height="${BASE - TOP + 6}" fill="${t.accent3}" opacity="0.5"/>
-    </g>
-    <path d="${area}" fill="url(#fill)" opacity="0">
-      <animate attributeName="opacity" values="0;1" dur="1.8s" fill="freeze" begin="0.5s"/>
-    </path>
-    <path d="${trace}" fill="none" stroke="url(#accent)" stroke-width="7" stroke-linecap="round" filter="url(#soft)" opacity="0">
-      <animate attributeName="opacity" values="0;0.28" dur="1.6s" fill="freeze" begin="2.6s"/>
-    </path>
-    <path d="${trace}" fill="none" stroke="url(#accent)" stroke-width="2.2" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
-      <animate attributeName="stroke-dashoffset" values="1;0" dur="3.4s" fill="freeze" begin="0.3s"/>
-    </path>
-  </g>
-
-  <circle cx="${last.x}" cy="${last.y}" r="10" fill="${t.accent3}" opacity="0.16">
-    <animate attributeName="opacity" values="0.08;0.24;0.08" dur="3.2s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="${last.x}" cy="${last.y}" r="3.6" fill="${t.accent3}"/>
-  <text x="${RIGHT}" y="${TOP - 14}" text-anchor="end" font-family="${MONO}" font-size="9" letter-spacing="1.6" fill="${t.muted}">TODAY</text>
-  <circle cx="${peakPoint.x}" cy="${peakPoint.y}" r="4.4" fill="none" stroke="${t.accent2}" stroke-width="1.3" stroke-opacity="0.9">
-    <animate attributeName="r" values="4.4;6.2;4.4" dur="3.6s" repeatCount="indefinite"/>
-  </circle>
-
-  ${monthLabels}<text x="40" y="262" font-family="${MONO}" font-size="9.5" fill="${t.muted}">peak ${esc(peakLabel)} · rendered in-repo · refreshes every 12h</text>
-  <text x="1400" y="262" text-anchor="end" font-family="${MONO}" font-size="9.5" letter-spacing="1.2" fill="${t.muted}">THE GRID NEVER SLEEPS</text>
+  <text x="1400" y="116" text-anchor="end" font-family="${MONO}" font-size="9.5" letter-spacing="1.2" fill="${t.muted}">EVERY TOWER IS A WEEK · EVERY LIGHT A COMMIT</text>
+  <text x="40" y="388" font-family="${MONO}" font-size="9.5" fill="${t.muted}">reflections never lie</text>
+  <text x="1400" y="388" text-anchor="end" font-family="${MONO}" font-size="9.5" letter-spacing="1.2" fill="${t.muted}">RENDERED IN-REPO · 12H REFRESH</text>
 </svg>
 `;
 }
@@ -849,8 +956,8 @@ for (const theme of ["dark", "light"]) {
     renderHeatmap(theme, contributions.days, contributions.total, today),
   );
   await fs.writeFile(
-    `${OUT_DIR}/signal-${theme}.svg`,
-    renderSignal(theme, data, contributions.days, today),
+    `${OUT_DIR}/skyline-${theme}.svg`,
+    renderSkyline(theme, data, contributions.days, today),
   );
 }
 

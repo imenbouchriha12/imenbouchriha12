@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate telemetry cards, heatmaps and signal trace
+      - name: Generate telemetry cards, heatmaps and midnight skyline
         run: node .github/scripts/profile-art.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

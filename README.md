@@ -121,14 +121,14 @@ Software engineer, full-stack by range, detail-obsessed by default. From AI-assi
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/signal-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/signal-light.svg" />
-    <img alt="Signal trace — a year of commits drawn as a living waveform, spiking on my busiest days" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/signal-dark.svg" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/skyline-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/skyline-light.svg" />
+    <img alt="Midnight skyline — each tower is a week of commits, each lit window an active day, reflected in the water" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/skyline-dark.svg" width="100%" />
   </picture>
 </p>
 
 <div align="center">
-  <sub>the signal never sleeps — drawn from a year of my commits, redrawn every 12 hours</sub>
+  <sub>the city I build after midnight — one commit at a time, redrawn every 12 hours</sub>
 </div>
 
 <br/>
