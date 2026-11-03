@@ -1,20 +1,13 @@
 <!-- for whoever pays attention: the best interfaces are love letters in disguise ✨ -->
 
 <div align="center">
-  <img src="assets/hero.svg" alt="Imen Bouchriha — Software Engineer" width="100%" />
-</div>
-
-<div align="center">
-  <a href="https://github.com/imenbouchriha12">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=FF6EC7&center=true&vCenter=true&width=680&lines=full-stack+developer+%7C+interface+daydreamer;I+turn+ideas+into+products+people+love;C%23+.NET+%C2%B7+Angular+%C2%B7+Spring+Boot+%C2%B7+React+%C2%B7+NestJS;currently+building+something+beautiful..." alt="Typing SVG" />
-  </a>
+  <img src="assets/hero-2026.svg" alt="Imen Bouchriha — software engineer, full-stack. I design and build real-time products that feel alive." width="100%" />
 </div>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=imenbouchriha12&style=for-the-badge&color=ff6ec7&label=PROFILE+VIEWS" alt="Profile views" />
   <img src="https://img.shields.io/github/followers/imenbouchriha12?style=for-the-badge&color=9d7bff&labelColor=0d1117&logo=github&logoColor=white" alt="Followers" />
   <img src="https://img.shields.io/github/last-commit/imenbouchriha12/imenbouchriha12?style=for-the-badge&color=22d3ee&labelColor=0d1117&label=LAST+UPDATE" alt="Last update" />
-  <img src="https://img.shields.io/badge/OPEN_TO-COLLABORATIONS-ff6ec7?style=for-the-badge&labelColor=0d1117" alt="Open to collaborations" />
 </p>
 
 <br/>
@@ -23,22 +16,19 @@
 <tr>
 <td width="61%" valign="top">
 
-### <code>&gt; Who Am I</code>
+### <code>01 · WHO AM I</code>
 
-I'm **Imen** — a software engineer who believes code should be as thoughtful as it is functional.
+> I design and build real-time products that feel alive — clean architecture on the inside, interfaces with a pulse on the outside.
 
-I build full-stack products where clean architecture meets interfaces that make people stop scrolling. From AI-powered backends to design systems obsessed with the last pixel, I care about the details most people never notice — and the feeling they can't forget.
+Software engineer, full-stack by range, detail-obsessed by default. From AI-assisted banking workflows to design systems obsessed with the last pixel, I care about the details most people never notice — and the feeling they can't forget.
 
 <br/>
 
-- 🌌 &nbsp;Building **real-time fintech experiences** with Angular, .NET 8 & SignalR
-- 🤖 &nbsp;Exploring **AI automation** and intelligent workflows
-- 🎨 &nbsp;Designing **accessible, dark-mode-first interfaces**
-- ☕ &nbsp;Fueled by espresso, synthwave and late-night playlists
+<img src="assets/focus-strip.png" alt="Focus areas: real-time fintech with Angular, .NET 8 and SignalR; AI automation and intelligent workflows with OpenAI; accessible, dark-mode-first design systems; espresso, synthwave and midnight builds." width="100%" />
 
 </td>
 <td width="39%" valign="top">
-  <img src="assets/imen-bordeaux.jpg" alt="Imen Bouchriha" width="100%" />
+  <img src="assets/portrait-card.jpg" alt="Imen Bouchriha — software engineer, full-stack. Open to collaborations." width="100%" />
 </td>
 </tr>
 </table>
