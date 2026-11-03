@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="560" viewBox="0 0 1440 560" role="img" aria-labelledby="bt bd">
+  <title id="bt">Beyond the code — the after-hours side</title>
+  <desc id="bd">A synthwave night scene with a striped moon, stars, a perspective grid and an espresso cup, next to four pillars: design systems, dark mode, accessibility and AI × UX.</desc>
+  <defs>
+    <linearGradient id="bbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111833"/>
+      <stop offset="0.55" stop-color="#0A0E1E"/>
+      <stop offset="1" stop-color="#070A12"/>
+    </linearGradient>
+    <radialGradient id="bpink"><stop offset="0" stop-color="#FF6EC7" stop-opacity="0.26"/><stop offset="1" stop-color="#FF6EC7" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bviolet"><stop offset="0" stop-color="#9D7BFF" stop-opacity="0.24"/><stop offset="1" stop-color="#9D7BFF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bcyan"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.18"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bvig" cx="0.5" cy="0.45" r="0.78">
+      <stop offset="0.55" stop-color="#05070D" stop-opacity="0"/>
+      <stop offset="1" stop-color="#05070D" stop-opacity="0.5"/>
+    </radialGradient>
+    <linearGradient id="btitle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF6EC7"><animate attributeName="stop-color" values="#FF6EC7;#C9A8FF;#FF6EC7" dur="9s" repeatCount="indefinite"/></stop>
+      <stop offset="0.55" stop-color="#C9A8FF"/>
+      <stop offset="1" stop-color="#22D3EE"><animate attributeName="stop-color" values="#22D3EE;#9D7BFF;#22D3EE" dur="9s" repeatCount="indefinite"/></stop>
+    </linearGradient>
+    <linearGradient id="bedge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6EC7" stop-opacity="0.8"/>
+      <stop offset="0.5" stop-color="#9D7BFF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="bfooter" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF6EC7"/>
+      <stop offset="0.5" stop-color="#9D7BFF"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="bline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF6EC7" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#9D7BFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="moonGrad" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#FFE9F7"/>
+      <stop offset="0.45" stop-color="#FFC7EC"/>
+      <stop offset="1" stop-color="#C9A8FF"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF9DDB" stop-opacity="0.42"/>
+      <stop offset="0.5" stop-color="#9D7BFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#9D7BFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shelf" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF6EC7" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#FFB86B" stop-opacity="0.55"/>
+      <stop offset="0.75" stop-color="#9D7BFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#9D7BFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="meteor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="cardGlow1"><stop offset="0" stop-color="#FF6EC7" stop-opacity="0.22"/><stop offset="1" stop-color="#FF6EC7" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cardGlow2"><stop offset="0" stop-color="#9D7BFF" stop-opacity="0.22"/><stop offset="1" stop-color="#9D7BFF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cardGlow3"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.22"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cardGlow4"><stop offset="0" stop-color="#FFB86B" stop-opacity="0.22"/><stop offset="1" stop-color="#FFB86B" stop-opacity="0"/></radialGradient>
+    <pattern id="bdots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.05" fill="#8FA3BF" opacity="0.14"/>
+    </pattern>
+    <clipPath id="moonClip"><circle cx="250" cy="278" r="60"/></clipPath>
+    <clipPath id="gridClip"><rect x="72" y="368" width="428" height="100"/></clipPath>
+  </defs>
+
+  <rect width="1440" height="560" fill="url(#bbg)"/>
+  <rect width="1440" height="560" fill="url(#bdots)"/>
+
+  <g>
+    <ellipse cx="1260" cy="80" rx="360" ry="200" fill="url(#bpink)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;-22 16;12 -10;0 0" dur="21s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="160" cy="440" rx="300" ry="200" fill="url(#bviolet)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;20 -14;-8 20;0 0" dur="25s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="760" cy="300" rx="380" ry="220" fill="url(#bcyan)" opacity="0.55">
+      <animateTransform attributeName="transform" type="translate" values="0 0;14 -18;-12 10;0 0" dur="28s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <g fill="#DCE6F2">
+    <circle cx="96" cy="150" r="1.5" opacity="0.4"><animate attributeName="opacity" values="0.15;0.8;0.15" dur="4.4s" repeatCount="indefinite"/></circle>
+    <circle cx="170" cy="220" r="1.2" opacity="0.35"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="5.8s" repeatCount="indefinite"/></circle>
+    <circle cx="392" cy="168" r="1.7" opacity="0.4"><animate attributeName="opacity" values="0.2;0.85;0.2" dur="3.9s" repeatCount="indefinite"/></circle>
+    <circle cx="440" cy="252" r="1.1" opacity="0.3"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="6.3s" repeatCount="indefinite"/></circle>
+    <circle cx="330" cy="330" r="1.3" opacity="0.35"><animate attributeName="opacity" values="0.25;0.8;0.25" dur="5.1s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="140" r="1.4" opacity="0.3"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="5.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1160" cy="250" r="1.2" opacity="0.3"><animate attributeName="opacity" values="0.2;0.75;0.2" dur="4.7s" repeatCount="indefinite"/></circle>
+    <circle cx="1320" cy="470" r="1.5" opacity="0.35"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="6.6s" repeatCount="indefinite"/></circle>
+    <path d="M1234 156 l2.4 6.4 6.4 2.4 -6.4 2.4 -2.4 6.4 -2.4 -6.4 -6.4 -2.4 6.4 -2.4z" fill="#7DE8F7" opacity="0.4">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="6.9s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <rect width="1440" height="560" fill="url(#bvig)"/>
+
+  <rect x="10" y="10" width="1420" height="540" rx="28" fill="none" stroke="#2A3346" stroke-width="1.5"/>
+  <rect x="18" y="18" width="1404" height="524" rx="22" fill="none" stroke="url(#bedge)" stroke-width="1" opacity="0.3"/>
+
+  <text x="72" y="62" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="3.4" fill="#7F8EA3">IMEN BOUCHRIHA &#8212; OFF-SCREEN</text>
+  <text x="1368" y="62" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="14" letter-spacing="2.4" fill="#5E6F87">AFTER HOURS &#183; 2026</text>
+  <line x1="72" y1="84" x2="1368" y2="84" stroke="#1E2637"/>
+
+  <text x="72" y="146" font-family="'Bahnschrift SemiBold', 'Segoe UI', Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="5" fill="url(#btitle)">BEYOND THE CODE</text>
+  <path d="M558 134 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="#C9A8FF" opacity="0.6">
+    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="6.2s" repeatCount="indefinite"/>
+  </path>
+  <text x="1368" y="142" text-anchor="end" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="19" fill="#A9B8CC">the code is the craft &#8212; the rest is the why.</text>
+
+  <line x1="72" y1="172" x2="1368" y2="172" stroke="#1E2637"/>
+
+  <g>
+    <circle cx="250" cy="278" r="150" fill="url(#moonGlow)">
+      <animate attributeName="opacity" values="0.55;0.95;0.55" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="278" r="60" fill="url(#moonGrad)"/>
+    <g clip-path="url(#moonClip)">
+      <rect x="186" y="248" width="128" height="5" fill="#0A0E1E" opacity="0.22"/>
+      <rect x="186" y="266" width="128" height="6" fill="#0A0E1E" opacity="0.26"/>
+      <rect x="186" y="286" width="128" height="7" fill="#0A0E1E" opacity="0.3"/>
+      <rect x="186" y="308" width="128" height="8" fill="#0A0E1E" opacity="0.32"/>
+      <rect x="186" y="332" width="128" height="9" fill="#0A0E1E" opacity="0.3"/>
+    </g>
+    <circle cx="250" cy="278" r="60" fill="none" stroke="#FFE1F4" stroke-opacity="0.3" stroke-width="1"/>
+    <ellipse cx="250" cy="278" rx="112" ry="42" fill="none" stroke="#9D7BFF" stroke-opacity="0.35" stroke-width="1.2" transform="rotate(-14 250 278)"/>
+    <circle cx="352" cy="252" r="3.2" fill="#7DE8F7" opacity="0.85"/>
+    <line x1="330" y1="200" x2="378" y2="218" stroke="url(#meteor)" stroke-width="1.4" stroke-linecap="round" opacity="0.9">
+      <animate attributeName="opacity" values="0;0.9;0" dur="7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 -14;10 4;20 10" dur="7s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <g clip-path="url(#gridClip)" stroke="#9D7BFF" stroke-opacity="0.16" stroke-width="1">
+    <line x1="250" y1="372" x2="8" y2="470"/>
+    <line x1="250" y1="372" x2="82" y2="470"/>
+    <line x1="250" y1="372" x2="156" y2="470"/>
+    <line x1="250" y1="372" x2="230" y2="470"/>
+    <line x1="250" y1="372" x2="304" y2="470"/>
+    <line x1="250" y1="372" x2="378" y2="470"/>
+    <line x1="250" y1="372" x2="452" y2="470"/>
+    <line x1="250" y1="372" x2="526" y2="470"/>
+    <line x1="72" y1="388" x2="500" y2="388"/>
+    <line x1="72" y1="402" x2="500" y2="402"/>
+    <line x1="72" y1="420" x2="500" y2="420"/>
+    <line x1="72" y1="442" x2="500" y2="442"/>
+    <line x1="72" y1="468" x2="500" y2="468"/>
+    <line x1="72" y1="420" x2="500" y2="420" stroke="#22D3EE" stroke-opacity="0.35">
+      <animate attributeName="stroke-opacity" values="0.08;0.38;0.08" dur="6s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <line x1="72" y1="468" x2="500" y2="468" stroke="url(#shelf)" stroke-width="1.5"/>
+
+  <g>
+    <rect x="106" y="432" width="44" height="32" rx="6" fill="#0B1120" stroke="#FFB86B" stroke-width="1.6"/>
+    <path d="M150 440 q15 2 13 12 q-2 10 -15 9" fill="none" stroke="#FFB86B" stroke-width="1.6" stroke-linecap="round"/>
+    <line x1="100" y1="466" x2="160" y2="466" stroke="#FFB86B" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+    <path d="M118 424 c-5 -7 5 -9 0 -16" fill="none" stroke="#FFB86B" stroke-width="1.3" stroke-linecap="round" opacity="0.7">
+      <animate attributeName="opacity" values="0.15;0.75;0.15" dur="4.4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 4;0 -4;0 4" dur="4.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M134 424 c-5 -8 5 -10 0 -18" fill="none" stroke="#FFB86B" stroke-width="1.3" stroke-linecap="round" opacity="0.5">
+      <animate attributeName="opacity" values="0.45;0.1;0.45" dur="5.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" values="0 -2;0 -8;0 -2" dur="5.2s" repeatCount="indefinite"/>
+    </path>
+    <text x="176" y="446" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2.6" fill="#FFB86B" opacity="0.85">ESPRESSO / 03</text>
+    <text x="176" y="464" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="1.6" fill="#8FA0B8">midnight builds &#183; late playlists</text>
+  </g>
+
+  <g>
+    <rect x="540" y="196" width="400" height="118" rx="18" fill="#0A0F1B" stroke="#212A3C" stroke-width="1.2"/>
+    <circle cx="584" cy="240" r="46" fill="url(#cardGlow1)">
+      <animate attributeName="opacity" values="0.4;0.95;0.4" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="584" cy="240" r="24" fill="#FF6EC7" fill-opacity="0.10" stroke="#FF6EC7" stroke-opacity="0.6" stroke-width="1.3"/>
+    <g fill="none" stroke="#FF6EC7" stroke-width="1.7" stroke-linejoin="round">
+      <rect x="570" y="226" width="24" height="16" rx="4" opacity="0.45"/>
+      <rect x="574" y="230" width="24" height="16" rx="4" opacity="0.75"/>
+      <rect x="578" y="234" width="24" height="16" rx="4"/>
+    </g>
+    <text x="622" y="246" font-family="'Segoe UI Semibold', 'Bahnschrift SemiBold', 'Segoe UI', Arial, sans-serif" font-size="27" fill="#EAF0F8">Design systems</text>
+    <text x="622" y="276" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="0.8" fill="#A9B4C4">tokens &#183; type &#183; rhythm</text>
+    <text x="920" y="224" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="1" fill="#FF6EC7" opacity="0.7">01</text>
+  </g>
+
+  <g>
+    <rect x="960" y="196" width="400" height="118" rx="18" fill="#0A0F1B" stroke="#212A3C" stroke-width="1.2"/>
+    <circle cx="1004" cy="240" r="46" fill="url(#cardGlow2)">
+      <animate attributeName="opacity" values="0.45;1;0.45" dur="6.8s" begin="0.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1004" cy="240" r="24" fill="#9D7BFF" fill-opacity="0.10" stroke="#9D7BFF" stroke-opacity="0.6" stroke-width="1.3"/>
+    <path d="M1012 224 a14 14 0 1 0 0 26 a11 11 0 1 1 0 -26z" fill="#9D7BFF" opacity="0.9"/>
+    <text x="1042" y="246" font-family="'Segoe UI Semibold', 'Bahnschrift SemiBold', 'Segoe UI', Arial, sans-serif" font-size="27" fill="#EAF0F8">Dark mode</text>
+    <text x="1042" y="276" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="0.8" fill="#A9B4C4">a way of life</text>
+    <text x="1340" y="224" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="1" fill="#9D7BFF" opacity="0.7">02</text>
+  </g>
+
+  <g>
+    <rect x="540" y="326" width="400" height="118" rx="18" fill="#0A0F1B" stroke="#212A3C" stroke-width="1.2"/>
+    <circle cx="584" cy="370" r="46" fill="url(#cardGlow3)">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="7.2s" begin="1.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="584" cy="370" r="24" fill="#22D3EE" fill-opacity="0.10" stroke="#22D3EE" stroke-opacity="0.6" stroke-width="1.3"/>
+    <g fill="none" stroke="#22D3EE" stroke-width="1.7" stroke-linecap="round">
+      <circle cx="584" cy="356" r="4"/>
+      <path d="M570 366 q14 4 28 0"/>
+      <path d="M584 364 v8"/>
+      <path d="M584 372 l-6 12"/>
+      <path d="M584 372 l6 12"/>
+    </g>
+    <text x="622" y="376" font-family="'Segoe UI Semibold', 'Bahnschrift SemiBold', 'Segoe UI', Arial, sans-serif" font-size="27" fill="#EAF0F8">Accessibility</text>
+    <text x="622" y="406" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="0.8" fill="#A9B4C4">beauty for everyone</text>
+    <text x="920" y="354" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="1" fill="#22D3EE" opacity="0.7">03</text>
+  </g>
+
+  <g>
+    <rect x="960" y="326" width="400" height="118" rx="18" fill="#0A0F1B" stroke="#212A3C" stroke-width="1.2"/>
+    <circle cx="1004" cy="370" r="46" fill="url(#cardGlow4)">
+      <animate attributeName="opacity" values="0.45;1;0.45" dur="6.4s" begin="1.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1004" cy="370" r="24" fill="#FFB86B" fill-opacity="0.10" stroke="#FFB86B" stroke-opacity="0.6" stroke-width="1.3"/>
+    <path d="M1000 354 l2.6 6.8 6.8 2.6 -6.8 2.6 -2.6 6.8 -2.6 -6.8 -6.8 -2.6 6.8 -2.6z" fill="#FFB86B"/>
+    <circle cx="1013" cy="381" r="7" fill="none" stroke="#FFB86B" stroke-width="1.4" stroke-dasharray="2 3">
+      <animateTransform attributeName="transform" type="rotate" from="0 1013 381" to="360 1013 381" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <text x="1042" y="376" font-family="'Segoe UI Semibold', 'Bahnschrift SemiBold', 'Segoe UI', Arial, sans-serif" font-size="27" fill="#EAF0F8">AI &#215; UX</text>
+    <text x="1042" y="406" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="0.8" fill="#A9B4C4">tools that feel human</text>
+    <text x="1340" y="354" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="1" fill="#FFB86B" opacity="0.7">04</text>
+  </g>
+
+  <line x1="72" y1="500" x2="1368" y2="500" stroke="url(#bline)"/>
+  <text x="72" y="528" font-family="Consolas, 'Courier New', monospace" font-size="14" letter-spacing="2.4" fill="#5E6F87">THE REST IS THE WHY</text>
+  <text x="1368" y="528" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="14" letter-spacing="2.4" fill="#7F8EA3">ESPRESSO &#183; SYNTHWAVE &#183; MIDNIGHT BUILDS</text>
+
+  <g stroke="#FF6EC7" stroke-opacity="0.45" stroke-width="1.6" fill="none">
+    <path d="M30 58 V30 H58"/>
+    <path d="M1382 30 H1410 V58"/>
+    <path d="M30 502 V530 H58"/>
+    <path d="M1410 502 V530 H1382"/>
+  </g>
+
+  <rect x="0" y="555" width="1440" height="5" fill="url(#bfooter)" opacity="0.85"/>
+</svg>

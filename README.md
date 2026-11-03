@@ -43,46 +43,7 @@ Software engineer, full-stack by range, detail-obsessed by default. From AI-assi
 
 <br/>
 
-<h3 align="center">✦ &nbsp; the arsenal &nbsp; ✦</h3>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=14&duration=3400&pause=900&color=9D7BFF&center=true&vCenter=true&width=680&lines=currently+exploring%3A+AI+orchestration+%C2%B7+realtime+UX+%C2%B7+design+systems;the+stack+changes%2C+the+obsession+stays+the+same+%E2%80%94+craft" alt="Currently exploring" />
-</p>
-
-<table align="center">
-<tr>
-<td align="center" width="33%" valign="top">
-  <sub><b>01 · INTERFACE</b></sub><br/><br/>
-  <img src="https://skillicons.dev/icons?i=angular,react,ts,js,tailwind,html,css&theme=dark&perline=7" width="252" alt="Frontend stack" /><br/><br/>
-  <sub>design systems · motion<br/>accessible, dark-mode-first</sub>
-</td>
-<td align="center" width="33%" valign="top">
-  <sub><b>02 · ENGINE</b></sub><br/><br/>
-  <img src="https://skillicons.dev/icons?i=cs,dotnet,java,spring,nestjs,nodejs&theme=dark&perline=6" width="216" alt="Backend stack" /><br/><br/>
-  <sub>clean architecture · APIs<br/>real-time with SignalR &amp; sockets</sub>
-</td>
-<td align="center" width="33%" valign="top">
-  <sub><b>03 · FOUNDATIONS</b></sub><br/><br/>
-  <img src="https://skillicons.dev/icons?i=postgres,mongodb,docker,jenkins,git,github&theme=dark&perline=6" width="216" alt="Data and DevOps stack" /><br/><br/>
-  <sub>data modelling · CI/CD<br/>ship small, ship often</sub>
-</td>
-</tr>
-</table>
-
-<br/>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="SignalR" />
-  <img src="https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI API" />
-  <img src="https://img.shields.io/badge/Entity_Framework-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="Entity Framework" />
-  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright" />
-  <img src="https://img.shields.io/badge/GitLab_CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white" alt="GitLab CI" />
-  <img src="https://img.shields.io/badge/design_systems-FF6EC7?style=flat-square&logo=figma&logoColor=white" alt="Design systems" />
-</p>
-
-<div align="center">
-  <sub>engineered · designed · human — the same three rules, every time.</sub>
-</div>
+<img src="assets/arsenal-2026.svg" alt="The arsenal — interface: Angular, React, TypeScript, JavaScript, Tailwind CSS, HTML5 and CSS3; engine: C#, .NET, Java, Spring Boot, NestJS and Node.js; foundations: PostgreSQL, MongoDB, Docker, Jenkins, Git and GitHub; also SignalR, OpenAI API, Entity Framework, Playwright, GitLab CI and design systems." width="100%" />
 
 <br/>
 
@@ -170,16 +131,7 @@ Software engineer, full-stack by range, detail-obsessed by default. From AI-assi
 
 <br/>
 
-<h3 align="center">☾ &nbsp; beyond the code &nbsp; ☾</h3>
-
-<table align="center">
-<tr>
-<td align="center" width="25%">🎨<br/><b>design systems</b><br/><sub>tokens · type · rhythm</sub></td>
-<td align="center" width="25%">🌙<br/><b>dark mode</b><br/><sub>a way of life</sub></td>
-<td align="center" width="25%">♿<br/><b>accessibility</b><br/><sub>beauty for everyone</sub></td>
-<td align="center" width="25%">🧠<br/><b>AI × UX</b><br/><sub>tools that feel human</sub></td>
-</tr>
-</table>
+<img src="assets/beyond-2026.svg" alt="Beyond the code — design systems, dark mode, accessibility and AI × UX; fueled by espresso, synthwave and midnight builds." width="100%" />
 
 <br/>
 
