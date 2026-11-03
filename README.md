@@ -1,7 +1,7 @@
 <!-- for whoever pays attention: the best interfaces are love letters in disguise ✨ -->
 
 <div align="center">
-  <img src="assets/hero-2026.svg" alt="Imen Bouchriha — software engineer, full-stack. I design and build real-time products that feel alive." width="100%" />
+  <img src="assets/hero-2026.svg?v=2" alt="Imen Bouchriha — software engineer, full-stack. I design and build real-time products that feel alive." width="100%" />
 </div>
 
 <p align="center">
