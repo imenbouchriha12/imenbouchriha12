@@ -1,10 +1,14 @@
 import fs from "node:fs/promises";
 
 const USER = process.env.GITHUB_REPOSITORY_OWNER || "imenbouchriha12";
+const REPO =
+  (process.env.GITHUB_REPOSITORY || `${USER}/${USER}`).split("/")[1] || USER;
 const OUT_DIR = "dist";
 const TOKEN = process.env.GITHUB_TOKEN || "";
 const FONT =
   "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif";
+const DISPLAY = "'Bahnschrift SemiBold','Segoe UI',Arial,sans-serif";
+const MONO = "Consolas,'Courier New',monospace";
 
 const HEADERS = {
   Accept: "application/vnd.github+json",
@@ -96,6 +100,44 @@ async function api(path) {
     throw new Error(`GitHub API ${path} failed: ${response.status}`);
   }
   return response.json();
+}
+
+async function profileViews() {
+  try {
+    const response = await fetch(
+      `https://komarev.com/ghpvc/?username=${encodeURIComponent(USER)}&style=flat-square`,
+      { headers: { "User-Agent": HEADERS["User-Agent"] } },
+    );
+    if (!response.ok) return "—";
+    const svg = await response.text();
+    const numbers = [...svg.matchAll(/>(\d[\d,]*)\s*<\/text>/g)];
+    return numbers.length ? numbers.at(-1)[1].replace(/,/g, "") : "—";
+  } catch {
+    return "—";
+  }
+}
+
+async function lastUpdate(today) {
+  try {
+    const commits = await api(`/repos/${USER}/${REPO}/commits?per_page=1`);
+    const date = commits?.[0]?.commit?.committer?.date;
+    if (!date) return { value: "—", sub: "main · latest commit" };
+    const months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+    const commitDay = new Date(`${date.slice(0, 10)}T00:00:00Z`);
+    const now = new Date(`${today}T00:00:00Z`);
+    const days = Math.round((now - commitDay) / 86400000);
+    const value =
+      days <= 0
+        ? "TODAY"
+        : days === 1
+          ? "1D AGO"
+          : days < 10
+            ? `${days}D AGO`
+            : `${months[commitDay.getUTCMonth()]} ${commitDay.getUTCDate()}`;
+    return { value, sub: "main · latest commit" };
+  } catch {
+    return { value: "—", sub: "main · latest commit" };
+  }
 }
 
 async function contributionsFromGraphQL() {
@@ -494,11 +536,110 @@ function renderHeatmap(theme, days, total, today) {
 `;
 }
 
+function statusIcon(kind, color) {
+  if (kind === "eye") {
+    return `<g stroke="${color}" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-13 0C-7.5-7 7.5-7 13 0 7.5 7-7.5 7-13 0Z"/>
+      <circle cx="0" cy="0" r="3.6" fill="${color}" stroke="none"/>
+    </g>`;
+  }
+  if (kind === "people") {
+    return `<g stroke="${color}" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="-4" cy="-5" r="4.2"/>
+      <path d="M-12 9c0-4.6 3.6-7.5 8-7.5s8 2.9 8 7.5"/>
+      <path d="M7-1.5a3.4 3.4 0 1 0 0-6.4" opacity="0.75"/>
+      <path d="M9 4.4c3 .8 4.8 3 4.8 6" opacity="0.75"/>
+    </g>`;
+  }
+  return `<g stroke="${color}" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-14 0h7l3-7 4.6 13 2.6-6h4.8"/>
+    <circle cx="-14" cy="0" r="1.4" fill="${color}" stroke="none"/>
+    <circle cx="14" cy="0" r="1.4" fill="${color}" stroke="none"/>
+  </g>`;
+}
+
+function renderStatus(theme, data) {
+  const t = THEMES[theme];
+  const modules = [
+    {
+      label: "PROFILE VIEWS",
+      value: data.views,
+      sub: "all-time · profile",
+      accent: t.accent,
+      icon: "eye",
+    },
+    {
+      label: "FOLLOWERS",
+      value: data.followers,
+      sub: "public · github",
+      accent: t.accent2,
+      icon: "people",
+    },
+    {
+      label: "LAST UPDATE",
+      value: data.lastUpdate.value,
+      sub: data.lastUpdate.sub,
+      accent: t.accent3,
+      icon: "pulse",
+    },
+  ];
+  const starts = [64, 501, 939];
+
+  const blocks = modules
+    .map((module, index) => {
+      const x = starts[index];
+      const cx = x + 26;
+      return `<circle cx="${cx}" cy="72" r="30" fill="${module.accent}" opacity="0.1">
+    <animate attributeName="opacity" values="0.05;0.18;0.05" dur="${6 + index}s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="${cx}" cy="72" r="23" fill="none" stroke="${module.accent}" stroke-opacity="0.55" stroke-width="1.2"/>
+  <g transform="translate(${cx} 72)">${statusIcon(module.icon, module.accent)}</g>
+  <text x="${x + 72}" y="48" font-family="${MONO}" font-size="14" letter-spacing="2.8" fill="${t.muted}">${esc(module.label)}</text>
+  <text x="${x + 70}" y="98" font-family="${DISPLAY}" font-size="36" font-weight="700" fill="${t.text}">${esc(module.value)}</text>
+  <text x="${x + 72}" y="120" font-family="${MONO}" font-size="12" letter-spacing="1.2" fill="${t.muted}">${esc(module.sub)}</text>`;
+    })
+    .join("\n  ");
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="150" viewBox="0 0 1440 150" role="img" aria-label="${esc(`Profile views ${data.views}, ${data.followers} followers, last update ${data.lastUpdate.value}`)}">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="${t.bg1}"/>
+      <stop offset="100%" stop-color="${t.bg2}"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="${t.accent}"/>
+      <stop offset="55%" stop-color="${t.accent2}"/>
+      <stop offset="100%" stop-color="${t.accent3}"/>
+      <animate attributeName="x1" values="0;0.12;0" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;1.12;1" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${t.accent}" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="${t.accent}" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.05" fill="${t.text}" opacity="${t.dots}"/>
+    </pattern>
+  </defs>
+  <rect x="1" y="1" width="1438" height="148" rx="22" fill="url(#bg)" stroke="${t.border}"/>
+  <rect x="1" y="1" width="1438" height="148" rx="22" fill="url(#dots)"/>
+  <circle cx="200" cy="10" r="150" fill="url(#glow)"/>
+  <circle cx="1240" cy="150" r="160" fill="url(#glow)"/>
+  ${blocks}
+  <line x1="501" y1="30" x2="501" y2="118" stroke="${t.border}" stroke-opacity="0.8"/>
+  <line x1="938" y1="30" x2="938" y2="118" stroke="${t.border}" stroke-opacity="0.8"/>
+  <rect x="26" y="143" width="1388" height="2.5" rx="1.25" fill="url(#accent)" opacity="0.6"/>
+</svg>
+`;
+}
+
 const today = new Date().toISOString().slice(0, 10);
 const contributions = await loadContributions();
-const [user, repos] = await Promise.all([
+const [user, repos, views, lastCommit] = await Promise.all([
   api(`/users/${USER}`),
   api(`/users/${USER}/repos?per_page=100&sort=updated`),
+  profileViews(),
+  lastUpdate(today),
 ]);
 
 const ownRepos = repos.filter((repo) => !repo.fork);
@@ -511,12 +652,15 @@ const data = {
   repos: user.public_repos,
   followers: user.followers,
   stars: ownRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0),
+  views,
+  lastUpdate: lastCommit,
 };
 
 await fs.mkdir(OUT_DIR, { recursive: true });
 
 for (const theme of ["dark", "light"]) {
   await fs.writeFile(`${OUT_DIR}/stats-${theme}.svg`, renderStats(theme, data));
+  await fs.writeFile(`${OUT_DIR}/status-${theme}.svg`, renderStatus(theme, data));
   await fs.writeFile(
     `${OUT_DIR}/languages-${theme}.svg`,
     renderLanguages(theme, languages),
@@ -532,5 +676,5 @@ for (const theme of ["dark", "light"]) {
 }
 
 console.log(
-  `Generated telemetry: ${data.total} contributions · ${data.streak.current}d current streak · ${data.streak.longest}d longest · ${languages.length} languages`,
+  `Generated telemetry: ${data.total} contributions · ${data.streak.current}d current streak · ${data.streak.longest}d longest · ${data.views} views · ${data.followers} followers · last update ${data.lastUpdate.value} · ${languages.length} languages`,
 );

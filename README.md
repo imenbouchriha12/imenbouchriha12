@@ -5,9 +5,11 @@
 </div>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=imenbouchriha12&style=for-the-badge&color=ff6ec7&label=PROFILE+VIEWS" alt="Profile views" />
-  <img src="https://img.shields.io/github/followers/imenbouchriha12?style=for-the-badge&color=9d7bff&labelColor=0d1117&logo=github&logoColor=white" alt="Followers" />
-  <img src="https://img.shields.io/github/last-commit/imenbouchriha12/imenbouchriha12?style=for-the-badge&color=22d3ee&labelColor=0d1117&label=LAST+UPDATE" alt="Last update" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/status-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/status-light.svg" />
+    <img width="100%" alt="Profile telemetry — profile views, followers and last update" src="https://raw.githubusercontent.com/imenbouchriha12/imenbouchriha12/output/status-dark.svg" />
+  </picture>
 </p>
 
 <br/>
@@ -137,12 +139,32 @@ Software engineer, full-stack by range, detail-obsessed by default. From AI-assi
 
 <h3 align="center">✉ &nbsp; find me in the wild &nbsp; ✉</h3>
 
-<p align="center">
-  <a href="mailto:imenbouchriha5@gmail.com"><img src="https://img.shields.io/badge/Email-FF6EC7?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0D1117" alt="Email" /></a>
-  <a href="https://www.linkedin.com/in/bouchriha-imen-99077823b"><img src="https://img.shields.io/badge/LinkedIn-9D7BFF?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0D1117" alt="LinkedIn" /></a>
-  <a href="https://github.com/imenbouchriha12"><img src="https://img.shields.io/badge/GitHub-22D3EE?style=for-the-badge&logo=github&logoColor=0D1117&labelColor=0D1117" alt="GitHub" /></a>
-  <a href="https://imen-bouchriha.netlify.app/"><img src="https://img.shields.io/badge/Portfolio-FF6EC7?style=for-the-badge&logo=netlify&logoColor=white&labelColor=0D1117" alt="Portfolio" /></a>
-</p>
+<table>
+<tr>
+<td width="50%" valign="top">
+  <a href="mailto:imenbouchriha5@gmail.com">
+    <img src="assets/contact/email.svg" alt="Email — imenbouchriha5@gmail.com. Opens your mail app." width="100%" />
+  </a>
+</td>
+<td width="50%" valign="top">
+  <a href="https://www.linkedin.com/in/bouchriha-imen-99077823b">
+    <img src="assets/contact/linkedin.svg" alt="LinkedIn — bouchriha-imen-99077823b. Opens the LinkedIn profile." width="100%" />
+  </a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+  <a href="https://github.com/imenbouchriha12">
+    <img src="assets/contact/github.svg" alt="GitHub — @imenbouchriha12. Opens the GitHub profile." width="100%" />
+  </a>
+</td>
+<td width="50%" valign="top">
+  <a href="https://imen-bouchriha.netlify.app/">
+    <img src="assets/contact/portfolio.svg" alt="Portfolio — imen-bouchriha.netlify.app. Opens the live portfolio." width="100%" />
+  </a>
+</td>
+</tr>
+</table>
 
 <div align="center">
   <br/>
@@ -155,3 +177,6 @@ Software engineer, full-stack by range, detail-obsessed by default. From AI-assi
 <div align="center">
   <img src="assets/footer.svg" alt="Made with curiosity, caffeine and code" width="100%" />
 </div>
+
+<!-- view counter pixel: keeps the profile view count accurate; the band shows a 12-hour snapshot -->
+<img src="https://komarev.com/ghpvc/?username=imenbouchriha12&style=flat&color=ff6ec7" width="1" height="1" alt="" />

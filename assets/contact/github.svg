@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="240" viewBox="0 0 720 240" role="img" aria-labelledby="t d">
+  <title id="t">GitHub &#8212; @imenbouchriha12</title>
+  <desc id="d">Open imenbouchriha12 on GitHub</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#101733"/>
+      <stop offset="0.6" stop-color="#0A0E1E"/>
+      <stop offset="1" stop-color="#070A12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violet" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#9D7BFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#9D7BFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.45" r="0.8">
+      <stop offset="0.55" stop-color="#05070D" stop-opacity="0"/>
+      <stop offset="1" stop-color="#05070D" stop-opacity="0.45"/>
+    </radialGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.8"/>
+      <stop offset="0.55" stop-color="#9D7BFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.6"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.05" fill="#8FA3BF" opacity="0.13"/>
+    </pattern>
+    <clipPath id="cardClip"><rect x="8" y="8" width="704" height="224" rx="22"/></clipPath>
+  </defs>
+
+  <rect width="720" height="240" fill="url(#bg)"/>
+  <rect width="720" height="240" fill="url(#dots)"/>
+  <ellipse cx="640" cy="20" rx="200" ry="140" fill="url(#glow)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;-14 10;8 -6;0 0" dur="18s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="60" cy="230" rx="200" ry="130" fill="url(#violet)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;12 -8;-6 12;0 0" dur="22s" repeatCount="indefinite"/>
+  </ellipse>
+  <g clip-path="url(#cardClip)"><rect x="8" y="8" width="704" height="96" fill="url(#band)"/></g>
+  <rect width="720" height="240" fill="url(#vig)"/>
+
+  <rect x="8" y="8" width="704" height="224" rx="22" fill="none" stroke="#2A3346" stroke-width="1.4"/>
+  <rect x="14" y="14" width="692" height="212" rx="18" fill="none" stroke="url(#edge)" stroke-width="1" opacity="0.3"/>
+
+  <circle cx="68" cy="66" r="32" fill="#22D3EE" opacity="0.1">
+    <animate attributeName="opacity" values="0.05;0.18;0.05" dur="6s" begin="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="68" cy="66" r="25" fill="none" stroke="#22D3EE" stroke-opacity="0.6" stroke-width="1.2"/>
+  <g transform="translate(68 66)"><g transform="translate(-15 -15) scale(1.25)" fill="#22D3EE"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></g></g>
+
+  <text x="112" y="60" font-family="'Segoe UI Semibold', 'Bahnschrift SemiBold', 'Segoe UI', Arial, sans-serif" font-size="30" fill="#EAF0F8">GitHub</text>
+  <text x="112" y="94" font-family="Consolas, 'Courier New', monospace" font-size="15.5" letter-spacing="0.4" fill="#A9B4C4">@imenbouchriha12</text>
+
+  <line x1="32" y1="146" x2="688" y2="146" stroke="#1E2637"/>
+  <text x="32" y="184" font-family="Consolas, 'Courier New', monospace" font-size="12.5" letter-spacing="2.6" fill="#22D3EE" opacity="0.85">OPEN CHANNEL</text>
+  <g transform="translate(672 184)" fill="none" stroke="#22D3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-10 0 H6 M0 -6 L6 0 L0 6"/>
+    <animateTransform attributeName="transform" type="translate" values="672 184;678 184;672 184" dur="3.4s" begin="1.2s" repeatCount="indefinite"/>
+  </g>
+
+  <text x="32" y="220" font-family="Consolas, 'Courier New', monospace" font-size="11" letter-spacing="2.2" fill="#5E6F87">03 / CHANNEL</text>
+</svg>
