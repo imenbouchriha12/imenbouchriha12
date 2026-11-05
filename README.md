@@ -30,7 +30,7 @@ Software engineer, full-stack by range, detail-obsessed by default. From AI-assi
 
 </td>
 <td width="39%" valign="top">
-  <img src="assets/afterglow-card.svg" alt="Imen Bouchriha — afterglow identity card: neon artwork with decaying, grainy edges. Software engineer, full-stack, always building after midnight — signed." width="100%" />
+  <img src="assets/afterglow-card-animated.svg" alt="Imen Bouchriha — animated afterglow identity card: breathing, dissolving neon edges and drifting embers. Software engineer, full-stack, always building after midnight — signed." width="100%" />
 </td>
 </tr>
 </table>
