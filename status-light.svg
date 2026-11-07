@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="150" viewBox="0 0 1440 150" role="img" aria-label="Profile views 143, 2 followers, last update 2D AGO">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fff5fb"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b03a97"/>
+      <stop offset="55%" stop-color="#7c5cff"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+      <animate attributeName="x1" values="0;0.12;0" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;1.12;1" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b03a97" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#b03a97" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.05" fill="#1f2328" opacity="0.045"/>
+    </pattern>
+  </defs>
+  <rect x="1" y="1" width="1438" height="148" rx="22" fill="url(#bg)" stroke="#d8dee4"/>
+  <rect x="1" y="1" width="1438" height="148" rx="22" fill="url(#dots)"/>
+  <circle cx="200" cy="10" r="150" fill="url(#glow)"/>
+  <circle cx="1240" cy="150" r="160" fill="url(#glow)"/>
+  <circle cx="90" cy="72" r="30" fill="#b03a97" opacity="0.1">
+    <animate attributeName="opacity" values="0.05;0.18;0.05" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="90" cy="72" r="23" fill="none" stroke="#b03a97" stroke-opacity="0.55" stroke-width="1.2"/>
+  <g transform="translate(90 72)"><g stroke="#b03a97" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-13 0C-7.5-7 7.5-7 13 0 7.5 7-7.5 7-13 0Z"/>
+      <circle cx="0" cy="0" r="3.6" fill="#b03a97" stroke="none"/>
+    </g></g>
+  <text x="136" y="48" font-family="Consolas,'Courier New',monospace" font-size="14" letter-spacing="2.8" fill="#6e7781">PROFILE VIEWS</text>
+  <text x="134" y="98" font-family="'Bahnschrift SemiBold','Segoe UI',Arial,sans-serif" font-size="36" font-weight="700" fill="#1f2328">143</text>
+  <text x="136" y="120" font-family="Consolas,'Courier New',monospace" font-size="12" letter-spacing="1.2" fill="#6e7781">all-time · profile</text>
+  <circle cx="527" cy="72" r="30" fill="#7c5cff" opacity="0.1">
+    <animate attributeName="opacity" values="0.05;0.18;0.05" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="527" cy="72" r="23" fill="none" stroke="#7c5cff" stroke-opacity="0.55" stroke-width="1.2"/>
+  <g transform="translate(527 72)"><g stroke="#7c5cff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="-4" cy="-5" r="4.2"/>
+      <path d="M-12 9c0-4.6 3.6-7.5 8-7.5s8 2.9 8 7.5"/>
+      <path d="M7-1.5a3.4 3.4 0 1 0 0-6.4" opacity="0.75"/>
+      <path d="M9 4.4c3 .8 4.8 3 4.8 6" opacity="0.75"/>
+    </g></g>
+  <text x="573" y="48" font-family="Consolas,'Courier New',monospace" font-size="14" letter-spacing="2.8" fill="#6e7781">FOLLOWERS</text>
+  <text x="571" y="98" font-family="'Bahnschrift SemiBold','Segoe UI',Arial,sans-serif" font-size="36" font-weight="700" fill="#1f2328">2</text>
+  <text x="573" y="120" font-family="Consolas,'Courier New',monospace" font-size="12" letter-spacing="1.2" fill="#6e7781">public · github</text>
+  <circle cx="965" cy="72" r="30" fill="#0e7490" opacity="0.1">
+    <animate attributeName="opacity" values="0.05;0.18;0.05" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="965" cy="72" r="23" fill="none" stroke="#0e7490" stroke-opacity="0.55" stroke-width="1.2"/>
+  <g transform="translate(965 72)"><g stroke="#0e7490" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-14 0h7l3-7 4.6 13 2.6-6h4.8"/>
+    <circle cx="-14" cy="0" r="1.4" fill="#0e7490" stroke="none"/>
+    <circle cx="14" cy="0" r="1.4" fill="#0e7490" stroke="none"/>
+  </g></g>
+  <text x="1011" y="48" font-family="Consolas,'Courier New',monospace" font-size="14" letter-spacing="2.8" fill="#6e7781">LAST UPDATE</text>
+  <text x="1009" y="98" font-family="'Bahnschrift SemiBold','Segoe UI',Arial,sans-serif" font-size="36" font-weight="700" fill="#1f2328">2D AGO</text>
+  <text x="1011" y="120" font-family="Consolas,'Courier New',monospace" font-size="12" letter-spacing="1.2" fill="#6e7781">main · latest commit</text>
+  <line x1="501" y1="30" x2="501" y2="118" stroke="#d8dee4" stroke-opacity="0.8"/>
+  <line x1="938" y1="30" x2="938" y2="118" stroke="#d8dee4" stroke-opacity="0.8"/>
+  <rect x="26" y="143" width="1388" height="2.5" rx="1.25" fill="url(#accent)" opacity="0.6"/>
+</svg>

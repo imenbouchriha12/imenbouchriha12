@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-label="Current streak: 0 days">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0e16"/>
+      <stop offset="100%" stop-color="#150f27"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff6ec7"/>
+      <stop offset="55%" stop-color="#9d7bff"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+      <animate attributeName="x1" values="0;0.12;0" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;1.12;1" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6ec7" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff6ec7" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#e6edf3" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1100" height="190" rx="18" fill="url(#bg)" stroke="#30363d"/>
+  <rect width="1100" height="190" rx="18" fill="url(#dots)"/>
+  <circle cx="1026" cy="16" r="96" fill="url(#glow)"/>
+  <text x="28" y="36" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2.4" fill="#8b949e">STREAK TELEMETRY</text>
+  <circle cx="1034" cy="32" r="4" fill="#ff6ec7">
+    <animate attributeName="opacity" values="1;0.25;1" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+  <text x="1044" y="36" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#8b949e">live</text>
+  <text x="28" y="92" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="34" font-weight="700" fill="#e6edf3">0</text>
+  <text x="62" y="92" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8b949e">days</text>
+  <text x="28" y="112" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" letter-spacing="1.2" fill="#8b949e">CURRENT STREAK</text>
+  <text x="190" y="92" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="34" font-weight="700" fill="#e6edf3">5</text>
+  <text x="224" y="92" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8b949e">days</text>
+  <text x="190" y="112" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" letter-spacing="1.2" fill="#8b949e">LONGEST STREAK</text>
+  <text x="352" y="92" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#e6edf3">2026-11-05</text>
+  
+  <text x="352" y="112" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" letter-spacing="1.2" fill="#8b949e">LAST CONTRIBUTION</text>
+  <rect x="540" y="52" width="1" height="90" fill="#30363d"/>
+  <text x="552" y="46" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" letter-spacing="1.4" fill="#8b949e">LAST 26 WEEKS</text>
+  <text x="1072" y="46" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e">max 32 / week</text>
+  <rect x="552" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="572" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="592" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="612" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="632" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="652" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="672" y="144" width="13" height="6.0" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="692" y="144" width="13" height="6.0" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="712" y="142.6875" width="13" height="7.3" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="732" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="752" y="144" width="13" height="6.0" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="772" y="128.0625" width="13" height="21.9" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="792" y="128.0625" width="13" height="21.9" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="812" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="832" y="144" width="13" height="6.0" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="852" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="872" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="892" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="912" y="147" width="13" height="3.0" rx="3" fill="#21262d" opacity="1"/>
+  <rect x="932" y="142.6875" width="13" height="7.3" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="952" y="137.8125" width="13" height="12.2" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="972" y="140.25" width="13" height="9.8" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="992" y="96.375" width="13" height="53.6" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="1012" y="89.0625" width="13" height="60.9" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="1032" y="81.75" width="13" height="68.3" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <rect x="1052" y="72" width="13" height="78.0" rx="3" fill="url(#accent)" opacity="0.9"/>
+  <text x="552" y="170" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e">weekly rhythm · today</text>
+  <text x="1072" y="170" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9" fill="#8b949e">rendered in-repo · refreshes every 12h</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="250" viewBox="0 0 520 250" role="img" aria-label="Top languages by bytes across public repositories">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fff5fb"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b03a97"/>
+      <stop offset="55%" stop-color="#7c5cff"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+      <animate attributeName="x1" values="0;0.12;0" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;1.12;1" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b03a97" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#b03a97" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#1f2328" opacity="0.045"/>
+    </pattern>
+  </defs>
+  <rect width="520" height="250" rx="18" fill="url(#bg)" stroke="#d8dee4"/>
+  <rect width="520" height="250" rx="18" fill="url(#dots)"/>
+  <circle cx="446" cy="16" r="96" fill="url(#glow)"/>
+  <text x="28" y="36" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2.4" fill="#6e7781">TOP LANGUAGES</text>
+  <circle cx="454" cy="32" r="4" fill="#b03a97">
+    <animate attributeName="opacity" values="1;0.25;1" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+  <text x="464" y="36" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#6e7781">live</text>
+  <text x="28" y="54" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" fill="#6e7781">by primary language across public repositories</text>
+  <circle cx="33" cy="68" r="4" fill="#F1E05A"/>
+  <text x="46" y="72" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">JavaScript</text>
+  <text x="500" y="72" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" fill="#6e7781">23.8%</text>
+  <rect x="46" y="78" width="454" height="5" rx="2.5" fill="#eaeef2"/>
+  <rect x="46" y="78" width="108.1" height="5" rx="2.5" fill="#F1E05A" opacity="0.9"/>
+  <circle cx="33" cy="95" r="4" fill="#3178C6"/>
+  <text x="46" y="99" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">TypeScript</text>
+  <text x="500" y="99" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" fill="#6e7781">23.8%</text>
+  <rect x="46" y="105" width="454" height="5" rx="2.5" fill="#eaeef2"/>
+  <rect x="46" y="105" width="108.1" height="5" rx="2.5" fill="#3178C6" opacity="0.9"/>
+  <circle cx="33" cy="122" r="4" fill="#B07219"/>
+  <text x="46" y="126" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">Java</text>
+  <text x="500" y="126" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" fill="#6e7781">19.0%</text>
+  <rect x="46" y="132" width="454" height="5" rx="2.5" fill="#eaeef2"/>
+  <rect x="46" y="132" width="86.5" height="5" rx="2.5" fill="#B07219" opacity="0.9"/>
+  <circle cx="33" cy="149" r="4" fill="#E34C26"/>
+  <text x="46" y="153" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">HTML</text>
+  <text x="500" y="153" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" fill="#6e7781">14.3%</text>
+  <rect x="46" y="159" width="454" height="5" rx="2.5" fill="#eaeef2"/>
+  <rect x="46" y="159" width="64.9" height="5" rx="2.5" fill="#E34C26" opacity="0.9"/>
+  <circle cx="33" cy="176" r="4" fill="#3572A5"/>
+  <text x="46" y="180" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">Python</text>
+  <text x="500" y="180" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" fill="#6e7781">4.8%</text>
+  <rect x="46" y="186" width="454" height="5" rx="2.5" fill="#eaeef2"/>
+  <rect x="46" y="186" width="21.6" height="5" rx="2.5" fill="#3572A5" opacity="0.9"/>
+  <circle cx="33" cy="203" r="4" fill="#178600"/>
+  <text x="46" y="207" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#1f2328">C#</text>
+  <text x="500" y="207" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="10.5" fill="#6e7781">4.8%</text>
+  <rect x="46" y="213" width="454" height="5" rx="2.5" fill="#eaeef2"/>
+  <rect x="46" y="213" width="21.6" height="5" rx="2.5" fill="#178600" opacity="0.9"/>
+  <text x="28" y="242" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="9.5" fill="#6e7781">computed from primary languages · refreshed every 12h</text>
+</svg>
